@@ -9,9 +9,8 @@ versions.okhttp = "3.4.1"
 versions.retrofit = "2.5.0"
 versions.rxjava2 = "2.2.5"
 versions.rxandroid = "2.1.0"
+versions.rxlifecycle = "3.0.0"
 versions.butterknife = "10.1.0"
-versions.aspectjx = "2.0.1"
-versions.room = "1.1.1"
 versions.glide = "4.9.0"
 ext.versions = versions
 
@@ -30,9 +29,6 @@ androidx.recyclerview = 'androidx.recyclerview:recyclerview:1.0.0'
 androidx.annotation = 'androidx.annotation:annotation:1.0.0'
 androidx.multidex = 'androidx.multidex:multidex:2.0.0'
 androidx.constraintlayout = 'androidx.constraintlayout:constraintlayout:1.1.3'
-androidx.lifecycle_extensions = "androidx.lifecycle:lifecycle-extensions:$versions.androidx_lifecycle"
-androidx.viewmodel = "androidx.lifecycle:lifecycle-viewmodel:$versions.androidx_lifecycle"
-androidx.livedata = "androidx.lifecycle:lifecycle-livedata:$versions.androidx_lifecycle"
 deps.androidx = androidx
 
 def room = [:]
@@ -46,6 +42,8 @@ def lifecycle = [:]
 lifecycle.common = "androidx.lifecycle:lifecycle-common:$versions.lifecycle"
 lifecycle.runtime = "androidx.lifecycle:lifecycle-runtime:$versions.lifecycle"
 lifecycle.viewmodel = "androidx.lifecycle:lifecycle-viewmodel:$versions.lifecycle"
+lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
+lifecycle.livedata = "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle"
 lifecycle.compiler = "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
 deps.androidx.lifecycle = lifecycle
 
@@ -63,14 +61,14 @@ retrofit.adapter_rxjava2 = "com.squareup.retrofit2:adapter-rxjava2:$versions.ret
 retrofit.url_manager = "me.jessyan:retrofit-url-manager:1.4.0"
 deps.retrofit = retrofit
 
-def rxlifecycle2 = [:]
-rxlifecycle2.runtime = "com.trello.rxlifecycle2:rxlifecycle:$versions.rxlifecycle2"
-rxlifecycle2.components = "com.trello.rxlifecycle2:rxlifecycle-components:$versions.rxlifecycle2"
-rxlifecycle2.android = "com.trello.rxlifecycle2:rxlifecycle-android:$versions.rxlifecycle2"
-rxlifecycle2.android_lifecycle = "com.trello.rxlifecycle2:rxlifecycle-android-lifecycle:$versions.rxlifecycle2"
-rxlifecycle2.kotlin = "com.trello.rxlifecycle2:rxlifecycle-kotlin:$versions.rxlifecycle2"
-rxlifecycle2.kotlin_lifecycle = "com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:$versions.rxlifecycle2"
-deps.rxlifecycle2 = rxlifecycle2
+def rxlifecycle = [:]
+rxlifecycle.runtime = "com.trello.rxlifecycle3:rxlifecycle:$versions.rxlifecycle"
+rxlifecycle.android = "com.trello.rxlifecycle3:rxlifecycle-android:$versions.rxlifecycle"
+rxlifecycle.components = "com.trello.rxlifecycle3:rxlifecycle-components:$versions.rxlifecycle"
+rxlifecycle.android_lifecycle = "com.trello.rxlifecycle3:rxlifecycle-android-lifecycle:$versions.rxlifecycle"
+rxlifecycle.kotlin = "com.trello.rxlifecycle3:rxlifecycle-kotlin:$versions.rxlifecycle"
+rxlifecycle.android_lifecycle_kotlin = "com.trello.rxlifecycle3:rxlifecycle-android-lifecycle-kotlin:$versions.rxlifecycle"
+deps.rxlifecycle = rxlifecycle
 
 def butterknife = [:]
 butterknife.runtime = "com.jakewharton:butterknife:$versions.butterknife"
