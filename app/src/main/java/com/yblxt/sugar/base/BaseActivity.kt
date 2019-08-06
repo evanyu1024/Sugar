@@ -5,7 +5,9 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.yblxt.sugar.util.ToastUtils
 import java.lang.reflect.ParameterizedType
 
 /**
@@ -22,14 +24,13 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompa
         if (isMvvmEnabled()) {
             initDataBinding()
             initViewModel()
+            observeLiveData()
             lifecycle.addObserver(mViewModel)
         } else {
             setContentView(getLayoutResId())
         }
         initView()
     }
-
-    protected open fun isMvvmEnabled() = true
 
     protected open fun initDataBinding() {
         mDataBinding = DataBindingUtil.setContentView(this, getLayoutResId())
@@ -40,6 +41,13 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompa
         val vmClass: Class<VM> = (javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[1] as Class<VM>
         mViewModel = ViewModelProviders.of(this).get(vmClass)
     }
+
+    private fun observeLiveData() {
+        // observe ToastLiveData
+        mViewModel.mToast.observe(this, Observer { ToastUtils.showToast(this, it) })
+    }
+
+    protected open fun isMvvmEnabled() = true
 
     @LayoutRes
     protected abstract fun getLayoutResId(): Int

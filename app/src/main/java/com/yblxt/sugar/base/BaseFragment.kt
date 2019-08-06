@@ -8,7 +8,9 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.yblxt.sugar.util.ToastUtils
 import java.lang.reflect.ParameterizedType
 
 /**
@@ -21,16 +23,20 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel> : Fragment
     protected lateinit var mViewModel: VM
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val contentView: View
-        if (isMvvmEnabled()) {
+        return if (isMvvmEnabled()) {
             initDataBinding(inflater, container)
             initViewModel()
+            observeLiveData()
             lifecycle.addObserver(mViewModel)
-            contentView = mDataBinding.root
+            mDataBinding.root
         } else {
-            contentView = inflater.inflate(getLayoutResId(), container, false)
+            inflater.inflate(getLayoutResId(), container, false)
         }
-        return contentView
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initView()
     }
 
     private fun initDataBinding(inflater: LayoutInflater, container: ViewGroup?) {
@@ -43,9 +49,9 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel> : Fragment
         mViewModel = ViewModelProviders.of(this).get(vmClass)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        initView()
+    private fun observeLiveData() {
+        // observe ToastLiveData
+        mViewModel.mToast.observe(this, Observer { ToastUtils.showToast(activity, it) })
     }
 
     protected open fun isMvvmEnabled() = true
