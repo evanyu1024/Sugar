@@ -1,6 +1,5 @@
 package com.yblxt.sugar.base
 
-import android.content.Context
 import android.content.Intent
 import android.view.View
 import android.widget.TextView
@@ -12,9 +11,10 @@ import com.yblxt.sugar.entry.DemoItem
 
 /**
  * @author evanyu
- * @date 2019-07-18$
+ * @date 2019-07-18
  */
-abstract class BaseDemoListActivity : BaseRecyclerViewActivity<ViewDataBinding, BaseViewModel, DemoItem>() {
+abstract class BaseDemoListActivity :
+    BaseRecyclerViewActivity<ViewDataBinding, BaseViewModel, DemoItem>() {
 
     override fun initRecyclerView(recyclerView: RecyclerView) {
         recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
@@ -26,7 +26,7 @@ abstract class BaseDemoListActivity : BaseRecyclerViewActivity<ViewDataBinding, 
     protected abstract fun getItemList(): List<DemoItem>
 
     override fun createAdapter(): InnerAdapter {
-        return InnerAdapter(this, getItemList())
+        return InnerAdapter(getItemList())
     }
 
     override fun onItemClick(view: View, position: Int) {
@@ -35,8 +35,8 @@ abstract class BaseDemoListActivity : BaseRecyclerViewActivity<ViewDataBinding, 
         }
     }
 
-    protected inner class InnerAdapter(context: Context, data: List<DemoItem>) :
-        BaseRecyclerViewAdapter<DemoItem>(context, android.R.layout.simple_list_item_1, data) {
+    protected inner class InnerAdapter(data: List<DemoItem>) :
+        BaseRecyclerViewAdapter<DemoItem>(android.R.layout.simple_list_item_1, data) {
 
         override fun convert(holder: InnerHolder, itemData: DemoItem?, position: Int) {
             holder.getViewById<TextView>(android.R.id.text1).text = itemData?.text

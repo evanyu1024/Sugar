@@ -13,30 +13,38 @@ import androidx.recyclerview.widget.RecyclerView
  * @date 2019-07-18
  */
 abstract class BaseRecyclerViewAdapter<E>(
-    private val context: Context,
-    @LayoutRes private val layoutResId: Int,
+    @LayoutRes protected val layoutResId: Int,
     var data: List<E>? = null
 ) : RecyclerView.Adapter<BaseRecyclerViewAdapter.InnerHolder>() {
 
     private var onItemClickListener: OnItemClickListener? = null
-    private var onItemLongClickListener: OnItemLongClickListener? = null
 
-    private val layoutInflater: LayoutInflater by lazy {
-        LayoutInflater.from(context)
-    }
+    private var layoutInflater: LayoutInflater? = null
 
     override fun getItemCount() = data?.size ?: 0
 
+    override fun getItemId(position: Int) = position.toLong()
+
+    open fun getItem(position: Int): E? = data?.get(position)
+
+    protected fun getLayoutInflater(context: Context): LayoutInflater {
+        if (layoutInflater == null) {
+            layoutInflater = LayoutInflater.from(context)
+        }
+        return layoutInflater!!
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InnerHolder {
-        val view = layoutInflater.inflate(layoutResId, parent, false)
+        val view = getLayoutInflater(parent.context).inflate(layoutResId, parent, false)
         val holder = InnerHolder(view)
-        view.setOnClickListener {
-            onItemClickListener?.onItemClick(view, holder.adapterPosition)
-        }
-        view.setOnLongClickListener {
-            onItemLongClickListener?.onItemLongClick(view, holder.adapterPosition) ?: false
-        }
+        initListener(holder)
         return holder
+    }
+
+    open fun initListener(holder: InnerHolder) {
+        holder.itemView.setOnClickListener {
+            onItemClickListener?.onItemClick(it, holder.adapterPosition)
+        }
     }
 
     override fun onBindViewHolder(holder: InnerHolder, position: Int) {
@@ -45,12 +53,13 @@ abstract class BaseRecyclerViewAdapter<E>(
 
     abstract fun convert(holder: InnerHolder, itemData: E?, position: Int)
 
-    fun setOnItemClickListener(listener: OnItemClickListener) {
-        this.onItemClickListener = listener
+    fun setDataAndNotifyChanged(data: List<E>) {
+        this.data = data
+        notifyDataSetChanged()
     }
 
-    fun setOnItemLongClickListener(listener: OnItemLongClickListener) {
-        this.onItemLongClickListener = listener
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        this.onItemClickListener = listener
     }
 
     fun setOnItemClickListener(closure: (View, Int) -> Unit) {
@@ -61,28 +70,16 @@ abstract class BaseRecyclerViewAdapter<E>(
         })
     }
 
-    fun setOnItemLongClickListener(closure: (View, Int) -> Boolean) {
-        setOnItemLongClickListener(object : OnItemLongClickListener {
-            override fun onItemLongClick(view: View, position: Int): Boolean {
-                return closure(view, position)
-            }
-        })
-    }
-
     interface OnItemClickListener {
         fun onItemClick(view: View, position: Int)
     }
 
-    interface OnItemLongClickListener {
-        fun onItemLongClick(view: View, position: Int): Boolean
-    }
-
-    class InnerHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    open class InnerHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val viewCache: SparseArray<View> = SparseArray()
 
         @Suppress("UNCHECKED_CAST")
-        fun <T> getViewById(resId: Int): T {
+        fun <V : View> getViewById(resId: Int): V {
             var view: View? = viewCache[resId]
             if (view == null) {
                 view = itemView.findViewById(resId)
@@ -90,7 +87,7 @@ abstract class BaseRecyclerViewAdapter<E>(
                     viewCache.put(resId, view)
                 }
             }
-            return view as T
+            return view as V
         }
 
     }

@@ -16,7 +16,7 @@ import java.lang.reflect.ParameterizedType
  */
 abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompatActivity() {
 
-    protected lateinit var mDataBinding: DB
+    protected lateinit var mBinding: DB
     protected lateinit var mViewModel: VM
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +33,7 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompa
     }
 
     protected open fun initDataBinding() {
-        mDataBinding = DataBindingUtil.setContentView(this, getLayoutResId())
+        mBinding = DataBindingUtil.setContentView(this, getLayoutResId())
     }
 
     @Suppress("UNCHECKED_CAST")
