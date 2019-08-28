@@ -9,6 +9,6 @@ import com.yblxt.sugar.livadata.ToastLiveData
  */
 abstract class BaseViewModel : RxViewModel(), IViewModel {
 
-    val mToast = ToastLiveData()
+    val toast = ToastLiveData()
 
 }

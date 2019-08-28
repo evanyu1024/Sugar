@@ -44,7 +44,22 @@ dependencies {
     implementation deps.androidx.lifecycle.livedata
     implementation deps.androidx.lifecycle.viewmodel
     implementation deps.androidx.lifecycle.extensions
-
+    // rxlifecycle
     implementation deps.rxlifecycle.android_lifecycle_kotlin
+    // dagger
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.android_support
+    kapt deps.dagger.compiler
+    kapt deps.dagger.android_compiler
+
+    // glide
+    implementation deps.glide.runtime
+    kapt deps.glide.compiler
+
+    // retrofit
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.converter_gson
+    implementation deps.retrofit.adapter_rxjava2
 
 }

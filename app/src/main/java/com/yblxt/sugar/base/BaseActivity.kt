@@ -16,8 +16,8 @@ import java.lang.reflect.ParameterizedType
  */
 abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompatActivity() {
 
-    protected lateinit var mBinding: DB
-    protected lateinit var mViewModel: VM
+    protected lateinit var binding: DB
+    protected lateinit var viewModel: VM
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,7 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompa
             initDataBinding()
             initViewModel()
             observeLiveData()
-            lifecycle.addObserver(mViewModel)
+            lifecycle.addObserver(viewModel)
         } else {
             setContentView(getLayoutResId())
         }
@@ -33,18 +33,18 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompa
     }
 
     protected open fun initDataBinding() {
-        mBinding = DataBindingUtil.setContentView(this, getLayoutResId())
+        binding = DataBindingUtil.setContentView(this, getLayoutResId())
     }
 
-    @Suppress("UNCHECKED_CAST")
     protected open fun initViewModel() {
+        @Suppress("UNCHECKED_CAST")
         val vmClass: Class<VM> = (javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[1] as Class<VM>
-        mViewModel = ViewModelProviders.of(this).get(vmClass)
+        viewModel = ViewModelProviders.of(this).get(vmClass)
     }
 
     private fun observeLiveData() {
         // observe ToastLiveData
-        mViewModel.mToast.observe(this, Observer { ToastUtils.showToast(this, it) })
+        viewModel.toast.observe(this, Observer { ToastUtils.showToast(this, it) })
     }
 
     protected open fun isMvvmEnabled() = true

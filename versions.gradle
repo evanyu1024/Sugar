@@ -12,6 +12,7 @@ versions.rxandroid = "2.1.0"
 versions.rxlifecycle = "3.0.0"
 versions.butterknife = "10.1.0"
 versions.glide = "4.9.0"
+versions.dagger = "2.24"
 ext.versions = versions
 
 def deps = [:]

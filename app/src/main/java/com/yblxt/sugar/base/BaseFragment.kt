@@ -19,16 +19,16 @@ import java.lang.reflect.ParameterizedType
  */
 abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel> : Fragment() {
 
-    protected lateinit var mDataBinding: DB
-    protected lateinit var mViewModel: VM
+    protected lateinit var binding: DB
+    protected lateinit var viewModel: VM
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return if (isMvvmEnabled()) {
             initDataBinding(inflater, container)
             initViewModel()
             observeLiveData()
-            lifecycle.addObserver(mViewModel)
-            mDataBinding.root
+            lifecycle.addObserver(viewModel)
+            binding.root
         } else {
             inflater.inflate(getLayoutResId(), container, false)
         }
@@ -40,18 +40,18 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel> : Fragment
     }
 
     private fun initDataBinding(inflater: LayoutInflater, container: ViewGroup?) {
-        mDataBinding = DataBindingUtil.inflate(inflater, getLayoutResId(), container, false)
+        binding = DataBindingUtil.inflate(inflater, getLayoutResId(), container, false)
     }
 
     @Suppress("UNCHECKED_CAST")
     protected open fun initViewModel() {
         val vmClass: Class<VM> = (javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[1] as Class<VM>
-        mViewModel = ViewModelProviders.of(this).get(vmClass)
+        viewModel = ViewModelProviders.of(this).get(vmClass)
     }
 
     private fun observeLiveData() {
         // observe ToastLiveData
-        mViewModel.mToast.observe(this, Observer { ToastUtils.showToast(activity, it) })
+        viewModel.toast.observe(this, Observer { ToastUtils.showToast(activity, it) })
     }
 
     protected open fun isMvvmEnabled() = true
