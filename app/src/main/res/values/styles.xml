@@ -8,4 +8,48 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- default SugarProgressBar style (medium) -->
+    <!-- <item name="android:mirrorForRtl">false</item> -->
+    <style name="ProgressBar">
+        <item name="android:indeterminateOnly">true</item>
+        <item name="android:indeterminateDrawable">@drawable/progress_circular</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:indeterminateDuration">1600</item>
+        <item name="android:minWidth">88dp</item>
+        <item name="android:maxWidth">88dp</item>
+        <item name="android:minHeight">88dp</item>
+        <item name="android:maxHeight">88dp</item>
+    </style>
+
+    <style name="ProgressBar.XSmall">
+        <item name="android:minWidth">32dp</item>
+        <item name="android:maxWidth">32dp</item>
+        <item name="android:minHeight">32dp</item>
+        <item name="android:maxHeight">32dp</item>
+    </style>
+
+    <style name="ProgressBar.Small">
+        <item name="android:minWidth">56dp</item>
+        <item name="android:maxWidth">56dp</item>
+        <item name="android:minHeight">56dp</item>
+        <item name="android:maxHeight">56dp</item>
+    </style>
+
+    <style name="ProgressBar.Large">
+        <item name="android:minWidth">112dp</item>
+        <item name="android:maxWidth">112dp</item>
+        <item name="android:minHeight">112dp</item>
+        <item name="android:maxHeight">112dp</item>
+    </style>
+
+    <!-- <item name="android:mirrorForRtl">true</item> -->
+    <style name="ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/progress_horizontal</item>
+        <item name="android:indeterminateDrawable">@drawable/progress_horizontal_indeterminate</item>
+        <item name="android:indeterminateBehavior">repeat</item>
+        <item name="android:minHeight">4dp</item>
+        <item name="android:maxHeight">4dp</item>
+    </style>
+
 </resources>

@@ -12,9 +12,10 @@ class MainActivity : BaseDemoListActivity() {
 
     override fun getItemList(): List<DemoItem> {
         return listOf(
-                DemoItem("SecondActivity", SecondActivity::class.java),
-                DemoItem("DataBindingDemo", DataBindingDemoActivity::class.java),
-                DemoItem("item2")
+            DemoItem("SecondActivity", SecondActivity::class.java),
+            DemoItem("DataBindingDemo", DataBindingDemoActivity::class.java),
+            DemoItem("Widget", WidgetDemoListActivity::class.java),
+            DemoItem("item2")
         )
     }
 }

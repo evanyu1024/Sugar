@@ -23,6 +23,9 @@
         </activity>
         <activity android:name=".ui.activity.SecondActivity" />
         <activity android:name=".demo.databinding.DataBindingDemoActivity" />
+        <activity android:name=".ui.activity.WidgetDemoListActivity" />
+        <activity android:name=".ui.activity.widget.ProgressBarDemoActivity" />
+
     </application>
 
 </manifest>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+
+    <item android:duration="80">
+        <bitmap
+            android:antialias="true"
+            android:src="@drawable/img_progress_horizontal_indeterminate4"
+            android:tileMode="repeat" />
+    </item>
+
+    <item android:duration="80">
+        <bitmap
+            android:antialias="true"
+            android:src="@drawable/img_progress_horizontal_indeterminate3"
+            android:tileMode="repeat" />
+    </item>
+
+    <item android:duration="80">
+        <bitmap
+            android:antialias="true"
+            android:src="@drawable/img_progress_horizontal_indeterminate2"
+            android:tileMode="repeat" />
+    </item>
+
+    <item android:duration="80">
+        <bitmap
+            android:antialias="true"
+            android:src="@drawable/img_progress_horizontal_indeterminate1"
+            android:tileMode="repeat" />
+    </item>
+
+</animation-list>
