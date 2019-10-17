@@ -20,12 +20,11 @@ abstract class BaseRecyclerViewActivity<DB : ViewDataBinding, VM : BaseViewModel
 
     override fun getLayoutResId() = R.layout.layout_base_recyclerview
 
-    override fun initView() {
+    override fun init() {
         adapter = createAdapter().apply {
             setOnItemClickListener(this@BaseRecyclerViewActivity::onItemClick)
         }
         initRecyclerView(recyclerview_base)
-
     }
 
     protected abstract fun initRecyclerView(recyclerView: RecyclerView)

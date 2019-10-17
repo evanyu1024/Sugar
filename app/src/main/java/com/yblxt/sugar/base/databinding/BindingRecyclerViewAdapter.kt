@@ -4,6 +4,7 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import com.yblxt.sugar.base.BaseRecyclerViewAdapter
 
 /**
  * @author evanyu
@@ -13,7 +14,7 @@ class BindingRecyclerViewAdapter<E>(
     @LayoutRes layoutResId: Int,
     data: List<E>? = null,
     private var brId: Int = NO_BR_ID
-) : com.yblxt.sugar.base.BaseRecyclerViewAdapter<E>(layoutResId, data) {
+) : BaseRecyclerViewAdapter<E>(layoutResId, data) {
 
     companion object {
         @JvmStatic

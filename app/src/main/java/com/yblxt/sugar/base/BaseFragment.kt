@@ -36,11 +36,12 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel> : Fragment
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initView()
+        init(view)
     }
 
     private fun initDataBinding(inflater: LayoutInflater, container: ViewGroup?) {
         binding = DataBindingUtil.inflate(inflater, getLayoutResId(), container, false)
+        binding.lifecycleOwner = this
     }
 
     @Suppress("UNCHECKED_CAST")
@@ -59,6 +60,6 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel> : Fragment
     @LayoutRes
     protected abstract fun getLayoutResId(): Int
 
-    protected abstract fun initView()
+    protected abstract fun init(view: View)
 
 }

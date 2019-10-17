@@ -12,7 +12,7 @@ import kotlinx.android.synthetic.main.activity_progressbar.*
 class ProgressBarDemoActivity : BaseSimpleActivity() {
     override fun getLayoutResId() = R.layout.activity_progressbar
 
-    override fun initView() {
+    override fun init() {
         progressbar_horizontal.setOnProgressChangeListener { view, progress ->
             updateProgressShow()
         }

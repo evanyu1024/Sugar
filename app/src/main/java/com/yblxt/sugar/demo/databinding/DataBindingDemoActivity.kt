@@ -16,7 +16,7 @@ class DataBindingDemoActivity : BaseDaggerActivity<DataBindingDemoBinding, DataB
 
     override fun getLayoutResId() = R.layout.activity_databinding_demo
 
-    override fun initView() {
+    override fun init() {
         binding.viewModel = viewModel
         val adapter = BindingRecyclerViewAdapter(R.layout.item_rv_databinding_demo, viewModel.dataList, BR.itemBean)
         binding.rvDatabindingDemo.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)

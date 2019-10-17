@@ -29,11 +29,12 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompa
         } else {
             setContentView(getLayoutResId())
         }
-        initView()
+        init()
     }
 
     protected open fun initDataBinding() {
         binding = DataBindingUtil.setContentView(this, getLayoutResId())
+        binding.lifecycleOwner = this
     }
 
     protected open fun initViewModel() {
@@ -52,6 +53,6 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompa
     @LayoutRes
     protected abstract fun getLayoutResId(): Int
 
-    protected abstract fun initView()
+    protected abstract fun init()
 
 }

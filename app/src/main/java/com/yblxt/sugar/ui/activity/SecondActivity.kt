@@ -11,7 +11,7 @@ class SecondActivity : BaseSimpleActivity() {
 
     override fun getLayoutResId() = R.layout.activity_second
 
-    override fun initView() {
+    override fun init() {
 
     }
 }
