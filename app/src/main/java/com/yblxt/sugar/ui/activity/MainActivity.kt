@@ -3,6 +3,7 @@ package com.yblxt.sugar.ui.activity
 import com.yblxt.sugar.base.BaseDemoListActivity
 import com.yblxt.sugar.demo.databinding.DataBindingDemoActivity
 import com.yblxt.sugar.entry.DemoItem
+import com.yblxt.sugar.jetpack.JetpackMainActivity
 
 /**
  * @author evanyu
@@ -15,7 +16,7 @@ class MainActivity : BaseDemoListActivity() {
             DemoItem("SecondActivity", SecondActivity::class.java),
             DemoItem("DataBindingDemo", DataBindingDemoActivity::class.java),
             DemoItem("Widget", WidgetDemoListActivity::class.java),
-            DemoItem("item2")
+            DemoItem("Jetpack", JetpackMainActivity::class.java)
         )
     }
 }

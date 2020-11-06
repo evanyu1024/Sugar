@@ -25,7 +25,7 @@ abstract class BaseDaggerFragment<DB : ViewDataBinding, VM : BaseViewModel>
     @set:Inject
     var viewModelFactory: ViewModelProvider.Factory? = null
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         if (isDaggerEnabled()) {
             setupDaggerComponent(SugarApplication.appComponent)
         }

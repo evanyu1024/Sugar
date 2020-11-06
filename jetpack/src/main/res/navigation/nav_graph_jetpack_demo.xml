@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_jetpack_demo"
+    app:startDestination="@id/jetpackMainFragment">
+
+    <fragment
+        android:id="@+id/jetpackMainFragment"
+        android:name="com.yblxt.sugar.jetpack.JetpackMainFragment"
+        android:label="fragment_nav_demo_main"
+        tools:layout="@layout/fragment_jetpack_main">
+
+        <action
+            android:id="@+id/action_jetpackMainFragment_to_navTestActivity"
+            app:destination="@+id/navTestActivity" />
+
+        <action
+            android:id="@+id/action_jetpackMainFragment_to_navTestFragment"
+            app:destination="@+id/navTestFragment"
+            app:enterAnim="@anim/fragment_open_enter"
+            app:exitAnim="@anim/fragment_close_exit"
+            app:popEnterAnim="@anim/fragment_open_enter"
+            app:popExitAnim="@anim/fragment_close_exit" />
+
+    </fragment>
+
+    <activity
+        android:id="@+id/navTestActivity"
+        android:name="com.yblxt.sugar.jetpack.navigation.NavTestActivity"
+        android:label="activity_nav_test"
+        tools:layout="@layout/activity_nav_test">
+
+        <argument
+            android:name="testArg"
+            android:defaultValue="defVal"
+            app:argType="string" />
+
+    </activity>
+
+    <fragment
+        android:id="@+id/navTestFragment"
+        android:name="com.yblxt.sugar.jetpack.navigation.NavTestFragment"
+        android:label="fragment_nav_demo_second"
+        tools:layout="@layout/fragment_nav_test">
+
+        <argument
+            android:name="testArg"
+            android:defaultValue="defVal"
+            app:argType="string" />
+
+    </fragment>
+
+</navigation>

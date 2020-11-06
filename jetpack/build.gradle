@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdkVersion rootProject.ext.versions.compile_sdk
+    defaultConfig {
+        minSdkVersion rootProject.ext.versions.min_sdk
+        targetSdkVersion rootProject.ext.versions.target_sdk
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.3.2'
+
+    def deps = rootProject.ext.deps
+    implementation deps.kotlin.stdlib
+    implementation deps.androidx.appcompat
+    implementation deps.androidx.constraintlayout
+    implementation deps.androidx.recyclerview
+    // navigation
+    implementation deps.androidx.navigation.runtime
+    implementation deps.androidx.navigation.ui
+    implementation deps.androidx.navigation.feature
+    // lifecycle、livedata、viewmodel
+    implementation deps.androidx.lifecycle.common
+    implementation deps.androidx.lifecycle.livedata
+    implementation deps.androidx.lifecycle.viewmodel
+    api deps.androidx.lifecycle.extensions
+    // rxlifecycle
+    implementation deps.rxlifecycle.android_lifecycle_kotlin
+    // dagger
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.android_support
+    kapt deps.dagger.compiler
+    kapt deps.dagger.android_compiler
+}
