@@ -1,12 +1,12 @@
-package com.yblxt.sugar.base.dagger
+package com.yblxt.sugar.di
 
 import android.os.Bundle
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.yblxt.sugar.SugarApplication
-import com.yblxt.sugar.base.BaseActivity
-import com.yblxt.sugar.base.BaseViewModel
+import com.yblxt.sugar.common.base.BaseActivity
+import com.yblxt.sugar.common.base.BaseViewModel
 import com.yblxt.sugar.di.component.AppComponent
 import dagger.android.AndroidInjection
 import dagger.android.AndroidInjector

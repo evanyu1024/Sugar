@@ -1,7 +1,7 @@
 package com.yblxt.sugar.ui.activity
 
 import com.yblxt.sugar.R
-import com.yblxt.sugar.base.BaseSimpleActivity
+import com.yblxt.sugar.common.base.BaseSimpleActivity
 
 /**
  * @author evanyu

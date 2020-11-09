@@ -58,20 +58,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     api project(path: ':jetpack')
+    api project(path: ':common')
 
     def deps = rootProject.ext.deps
-    implementation deps.kotlin.stdlib
-    implementation deps.androidx.appcompat
-    implementation deps.androidx.constraintlayout
-    implementation deps.androidx.recyclerview
-    // rxlifecycle
-    implementation deps.rxlifecycle.android_lifecycle_kotlin
-    // dagger
-    implementation deps.dagger.runtime
-    implementation deps.dagger.android
-    implementation deps.dagger.android_support
-    kapt deps.dagger.compiler
-    kapt deps.dagger.android_compiler
     // glide
     implementation deps.glide.runtime
     kapt deps.glide.compiler
@@ -79,4 +68,7 @@ dependencies {
     implementation deps.retrofit.runtime
     implementation deps.retrofit.converter_gson
     implementation deps.retrofit.adapter_rxjava2
+    // dagger
+    kapt deps.dagger.compiler
+    kapt deps.dagger.android_compiler
 }

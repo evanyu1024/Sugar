@@ -1,4 +1,4 @@
-package com.yblxt.sugar.base.interf
+package com.yblxt.sugar.common.base.interf
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver

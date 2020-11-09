@@ -1,4 +1,4 @@
-package com.yblxt.sugar.livadata
+package com.yblxt.sugar.common.livadata
 
 import android.widget.Toast
 import androidx.annotation.IdRes

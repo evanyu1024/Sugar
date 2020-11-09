@@ -1,9 +1,9 @@
-package com.yblxt.sugar.base
+package com.yblxt.sugar.common.base
 
 import android.view.View
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
-import com.yblxt.sugar.R
+import com.yblxt.sugar.common.R
 import kotlinx.android.synthetic.main.layout_base_recyclerview.*
 
 /**

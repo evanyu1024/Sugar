@@ -1,4 +1,4 @@
-package com.yblxt.sugar.base
+package com.yblxt.sugar.common.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.yblxt.sugar.util.ToastUtils
+import com.yblxt.sugar.common.util.ToastUtils
 import java.lang.reflect.ParameterizedType
 
 /**

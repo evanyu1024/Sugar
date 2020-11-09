@@ -1,4 +1,4 @@
-package com.yblxt.sugar.base
+package com.yblxt.sugar.common.base
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes
@@ -7,7 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.yblxt.sugar.util.ToastUtils
+import com.yblxt.sugar.common.util.ToastUtils
 import java.lang.reflect.ParameterizedType
 
 /**

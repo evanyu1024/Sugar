@@ -1,4 +1,4 @@
-package com.yblxt.sugar.ui.widget;
+package com.yblxt.sugar.demo.widget.progressbar;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -11,29 +11,29 @@ import com.yblxt.sugar.R;
  * @author evanyu
  * @date 2019-09-17
  */
-public class SugarProgressBar extends ProgressBar {
+public class MyProgressBar extends ProgressBar {
 
     private OnProgressChangeListener mOnProgressChangeListener;
 
-    public SugarProgressBar(Context context) {
+    public MyProgressBar(Context context) {
         this(context, null);
     }
 
-    public SugarProgressBar(Context context, AttributeSet attrs) {
+    public MyProgressBar(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public SugarProgressBar(Context context, AttributeSet attrs, int defStyleAttr) {
+    public MyProgressBar(Context context, AttributeSet attrs, int defStyleAttr) {
         this(context, attrs, defStyleAttr, R.style.ProgressBar);
     }
 
-    public SugarProgressBar(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public MyProgressBar(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         TypedArray ta = null;
         try {
-            ta = context.obtainStyledAttributes(attrs, R.styleable.SugarProgressBar, defStyleAttr, defStyleRes);
+            ta = context.obtainStyledAttributes(attrs, R.styleable.MyProgressBar, defStyleAttr, defStyleRes);
             // android:enabled
-            boolean enabled = ta.getBoolean(R.styleable.SugarProgressBar_android_enabled, true);
+            boolean enabled = ta.getBoolean(R.styleable.MyProgressBar_android_enabled, true);
             setEnabled(enabled);
         } catch (Exception e) {
             e.printStackTrace();
@@ -64,7 +64,7 @@ public class SugarProgressBar extends ProgressBar {
     }
 
     public interface OnProgressChangeListener {
-        void onProgressChanged(SugarProgressBar progressBar, int progress);
+        void onProgressChanged(MyProgressBar progressBar, int progress);
     }
 
 }

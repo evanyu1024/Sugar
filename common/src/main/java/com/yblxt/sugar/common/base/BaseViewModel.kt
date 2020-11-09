@@ -1,7 +1,7 @@
-package com.yblxt.sugar.base
+package com.yblxt.sugar.common.base
 
-import com.yblxt.sugar.base.interf.IViewModel
-import com.yblxt.sugar.livadata.ToastLiveData
+import com.yblxt.sugar.common.base.interf.IViewModel
+import com.yblxt.sugar.common.livadata.ToastLiveData
 
 /**
  * @author evanyu

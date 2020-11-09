@@ -1,4 +1,4 @@
-package com.yblxt.sugar.base
+package com.yblxt.sugar.common.base
 
 import android.content.Context
 import android.util.SparseArray

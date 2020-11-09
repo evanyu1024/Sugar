@@ -3,7 +3,6 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
-    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -12,6 +11,7 @@ android {
         minSdkVersion rootProject.ext.versions.min_sdk
         targetSdkVersion rootProject.ext.versions.target_sdk
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -31,13 +31,26 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.3.2'
-
-    api project(path: ':common')
-    
+    api 'androidx.core:core-ktx:1.3.2'
+    api 'com.google.android.material:material:1.2.1'
     def deps = rootProject.ext.deps
-    // navigation
-    implementation deps.androidx.navigation.runtime
-    implementation deps.androidx.navigation.ui
-    implementation deps.androidx.navigation.feature
+    api deps.kotlin.stdlib
+    api deps.androidx.appcompat
+    api deps.androidx.constraintlayout
+    api deps.androidx.recyclerview
+    api deps.androidx.lifecycle.common
+    api deps.androidx.lifecycle.livedata
+    api deps.androidx.lifecycle.viewmodel
+    api deps.androidx.lifecycle.extensions
+    // rxjava
+    api deps.rxjava2
+    api deps.rxandroid
+    // rxlifecycle
+    api deps.rxlifecycle.android_lifecycle_kotlin
+    // dagger
+    api deps.dagger.runtime
+    api deps.dagger.android
+    api deps.dagger.android_support
+    kapt deps.dagger.compiler
+    kapt deps.dagger.android_compiler
 }

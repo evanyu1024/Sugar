@@ -1,10 +1,10 @@
-package com.yblxt.sugar.base.databinding
+package com.yblxt.sugar.common.base.databinding
 
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import com.yblxt.sugar.base.BaseRecyclerViewAdapter
+import com.yblxt.sugar.common.base.BaseRecyclerViewAdapter
 
 /**
  * @author evanyu

@@ -1,8 +1,7 @@
 package com.yblxt.sugar.ui.activity
 
-import com.yblxt.sugar.base.BaseDemoListActivity
+import com.yblxt.sugar.demo.widget.progressbar.ProgressBarDemoActivity
 import com.yblxt.sugar.entry.DemoItem
-import com.yblxt.sugar.ui.activity.widget.ProgressBarDemoActivity
 
 /**
  * @author evanyu

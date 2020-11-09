@@ -1,6 +1,5 @@
 package com.yblxt.sugar.ui.activity
 
-import com.yblxt.sugar.base.BaseDemoListActivity
 import com.yblxt.sugar.demo.databinding.DataBindingDemoActivity
 import com.yblxt.sugar.entry.DemoItem
 import com.yblxt.sugar.jetpack.JetpackMainActivity

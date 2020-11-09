@@ -1,10 +1,10 @@
-package com.yblxt.sugar.util
+package com.yblxt.sugar.common.util
 
 import android.app.Application
 import android.content.Context
 import android.text.TextUtils
 import android.widget.Toast
-import com.yblxt.sugar.livadata.ToastLiveData
+import com.yblxt.sugar.common.livadata.ToastLiveData
 
 /**
  * @author evanyu

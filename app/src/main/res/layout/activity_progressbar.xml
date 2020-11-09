@@ -8,27 +8,27 @@
     android:orientation="vertical"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
-    tools:context=".ui.activity.widget.ProgressBarDemoActivity">
+    tools:context=".demo.widget.progressbar.ProgressBarDemoActivity">
 
     <!-- xsmall -->
-    <com.yblxt.sugar.ui.widget.SugarProgressBar
+    <com.yblxt.sugar.demo.widget.progressbar.MyProgressBar
         style="@style/ProgressBar.XSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <!-- small -->
-    <com.yblxt.sugar.ui.widget.SugarProgressBar
+    <com.yblxt.sugar.demo.widget.progressbar.MyProgressBar
         style="@style/ProgressBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <!-- medium (default)-->
-    <com.yblxt.sugar.ui.widget.SugarProgressBar
+    <com.yblxt.sugar.demo.widget.progressbar.MyProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <!-- large -->
-    <com.yblxt.sugar.ui.widget.SugarProgressBar
+    <com.yblxt.sugar.demo.widget.progressbar.MyProgressBar
         style="@style/ProgressBar.Large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -49,7 +49,7 @@
             android:textSize="14sp" />
 
         <!-- horizontal -->
-        <com.yblxt.sugar.ui.widget.SugarProgressBar
+        <com.yblxt.sugar.demo.widget.progressbar.MyProgressBar
             android:id="@+id/progressbar_horizontal"
             style="@style/ProgressBar.Horizontal"
             android:layout_width="0dp"

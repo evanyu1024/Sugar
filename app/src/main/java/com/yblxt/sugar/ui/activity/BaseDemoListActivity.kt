@@ -1,4 +1,4 @@
-package com.yblxt.sugar.base
+package com.yblxt.sugar.ui.activity
 
 import android.content.Intent
 import android.view.View
@@ -7,6 +7,9 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.yblxt.sugar.common.base.BaseRecyclerViewActivity
+import com.yblxt.sugar.common.base.BaseRecyclerViewAdapter
+import com.yblxt.sugar.common.base.BaseViewModel
 import com.yblxt.sugar.entry.DemoItem
 
 /**

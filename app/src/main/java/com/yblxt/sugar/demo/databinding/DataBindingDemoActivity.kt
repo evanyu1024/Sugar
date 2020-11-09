@@ -4,8 +4,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yblxt.sugar.BR
 import com.yblxt.sugar.R
-import com.yblxt.sugar.base.dagger.BaseDaggerActivity
-import com.yblxt.sugar.base.databinding.BindingRecyclerViewAdapter
+import com.yblxt.sugar.di.BaseDaggerActivity
+import com.yblxt.sugar.common.base.databinding.BindingRecyclerViewAdapter
 import com.yblxt.sugar.databinding.DataBindingDemoBinding
 
 /**

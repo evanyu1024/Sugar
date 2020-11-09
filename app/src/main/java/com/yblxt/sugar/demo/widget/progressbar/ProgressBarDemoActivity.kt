@@ -1,8 +1,8 @@
-package com.yblxt.sugar.ui.activity.widget
+package com.yblxt.sugar.demo.widget.progressbar
 
 import android.view.View
 import com.yblxt.sugar.R
-import com.yblxt.sugar.base.BaseSimpleActivity
+import com.yblxt.sugar.common.base.BaseSimpleActivity
 import kotlinx.android.synthetic.main.activity_progressbar.*
 
 /**

@@ -1,10 +1,12 @@
-package com.yblxt.sugar.base
+package com.yblxt.sugar.di
 
 import android.content.Context
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.yblxt.sugar.SugarApplication
+import com.yblxt.sugar.common.base.BaseFragment
+import com.yblxt.sugar.common.base.BaseViewModel
 import com.yblxt.sugar.di.component.AppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector

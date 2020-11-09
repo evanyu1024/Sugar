@@ -1,4 +1,4 @@
-package com.yblxt.sugar.base
+package com.yblxt.sugar.common.base
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
@@ -7,7 +7,7 @@ import com.trello.lifecycle2.android.lifecycle.RxLifecycleAndroidLifecycle
 import com.trello.rxlifecycle3.LifecycleProvider
 import com.trello.rxlifecycle3.LifecycleTransformer
 import com.trello.rxlifecycle3.RxLifecycle
-import com.yblxt.sugar.base.interf.IViewModel
+import com.yblxt.sugar.common.base.interf.IViewModel
 import io.reactivex.Observable
 import io.reactivex.subjects.BehaviorSubject
 

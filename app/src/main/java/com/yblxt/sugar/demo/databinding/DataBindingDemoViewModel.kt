@@ -3,7 +3,7 @@ package com.yblxt.sugar.demo.databinding
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
-import com.yblxt.sugar.base.BaseViewModel
+import com.yblxt.sugar.common.base.BaseViewModel
 import javax.inject.Inject
 
 /**
