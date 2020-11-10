@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.layout_base_recyclerview.*
 
 /**
  * @author evanyu
- * @date 2019-07-18$
+ * @date 2019-07-18
  */
 abstract class BaseRecyclerViewActivity<DB : ViewDataBinding, VM : BaseViewModel, E> : BaseActivity<DB, VM>() {
 

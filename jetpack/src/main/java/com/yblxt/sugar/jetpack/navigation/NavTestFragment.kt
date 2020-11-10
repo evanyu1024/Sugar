@@ -20,8 +20,11 @@ class NavTestFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val value = arguments?.getString("testArg")
-        Log.d("evanyu", "testArg = $value")
+        arguments?.let {
+//            val testArgVal = it.getString("testArg")
+            val testArgVal = NavTestFragmentArgs.fromBundle(it).testArg
+            Log.d("evanyu", "testArgVal = $testArgVal")
+        }
     }
 
 }

@@ -1,6 +1,5 @@
 package com.yblxt.sugar.common.util
 
-import android.app.Application
 import android.content.Context
 import android.text.TextUtils
 import android.widget.Toast
@@ -19,16 +18,15 @@ object ToastUtils {
      * @param params  @[ToastLiveData.Params]
      */
     fun showToast(context: Context?, params: ToastLiveData.Params) {
-        var context: Context? = context ?: return
-        if (context !is Application) {
-            context = context!!.applicationContext
+        if (context == null) {
+            return;
         }
         var text: CharSequence? = null
         if (!TextUtils.isEmpty(params.text)) {
             text = params.text
         } else {
             try {
-                text = context!!.getString(params.textResId)
+                text = context.getString(params.textResId)
             } catch (e: Exception) {
                 e.printStackTrace()
             }

@@ -3,10 +3,12 @@ package com.yblxt.sugar.common.base
 import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.yblxt.sugar.common.R
 import com.yblxt.sugar.common.util.ToastUtils
 import java.lang.reflect.ParameterizedType
 
@@ -29,6 +31,7 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompa
         } else {
             setContentView(getLayoutResId())
         }
+        initToolbar()
         init()
     }
 
@@ -52,6 +55,12 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompa
 
     @LayoutRes
     protected abstract fun getLayoutResId(): Int
+
+    protected fun initToolbar() {
+        (findViewById(R.id.toolbar) as Toolbar?)?.let { toolbar ->
+            setSupportActionBar(toolbar)
+        }
+    }
 
     protected abstract fun init()
 

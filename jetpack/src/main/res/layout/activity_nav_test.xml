@@ -7,6 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".navigation.NavTestActivity">
 
+    <include
+        layout="@layout/my_toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

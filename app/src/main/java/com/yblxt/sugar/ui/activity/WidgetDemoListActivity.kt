@@ -9,6 +9,10 @@ import com.yblxt.sugar.entry.DemoItem
  */
 class WidgetDemoListActivity : BaseDemoListActivity() {
 
+    override fun init() {
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
     override fun getItemList(): List<DemoItem> {
         return listOf(
             DemoItem("ProgressBar", ProgressBarDemoActivity::class.java)

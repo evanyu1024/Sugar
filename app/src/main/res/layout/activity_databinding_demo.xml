@@ -15,12 +15,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <include
+            layout="@layout/my_toolbar"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
             android:id="@+id/iv_databinding_demo"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             app:imgUrl="@{viewModel.imgUrl}"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_databinding_demo"

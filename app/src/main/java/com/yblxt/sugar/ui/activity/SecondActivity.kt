@@ -12,6 +12,6 @@ class SecondActivity : BaseSimpleActivity() {
     override fun getLayoutResId() = R.layout.activity_second
 
     override fun init() {
-
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }

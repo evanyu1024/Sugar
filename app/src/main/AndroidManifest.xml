@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!-- MainActivity -->
         <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,10 +23,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.SecondActivity" />
-        <activity android:name=".demo.databinding.DataBindingDemoActivity" />
-        <activity android:name=".ui.activity.WidgetDemoListActivity" />
-        <activity android:name=".demo.widget.progressbar.ProgressBarDemoActivity" />
+
+        <!-- SecondActivity -->
+        <activity
+            android:name=".ui.activity.SecondActivity"
+            android:label="SecondActivity"
+            android:parentActivityName=".ui.activity.MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.MainActivity" />
+        </activity>
+
+        <!-- DataBindingDemoActivity -->
+        <activity
+            android:name=".demo.databinding.DataBindingDemoActivity"
+            android:label="DataBinding" />
+
+        <!-- WidgetDemoListActivity -->
+        <activity
+            android:name=".ui.activity.WidgetDemoListActivity"
+            android:label="Widget"
+            android:parentActivityName=".ui.activity.MainActivity">
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.activity.MainActivity" />
+        </activity>
+
+        <!-- ProgressBarDemoActivity -->
+        <activity
+            android:name=".demo.widget.progressbar.ProgressBarDemoActivity"
+            android:label="MyProgressBar" />
 
     </application>
 
