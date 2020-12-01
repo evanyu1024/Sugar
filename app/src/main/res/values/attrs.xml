@@ -5,4 +5,15 @@
         <attr name="android:enabled" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="MyToggleButton">
+        <attr name="toggleBackground" format="reference" />
+        <attr name="toggleIcon" format="reference" />
+        <attr name="toggleClickToggle" format="boolean" />
+        <attr name="toggleAnimDuration" format="integer" />
+        <attr name="toggleType" format="enum">
+            <enum name="round" value="0" />
+            <enum name="rectangle" value="1" />
+        </attr>
+    </declare-styleable>
+
 </resources>

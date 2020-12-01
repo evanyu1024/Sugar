@@ -29,6 +29,7 @@
             android:name=".ui.activity.SecondActivity"
             android:label="SecondActivity"
             android:parentActivityName=".ui.activity.MainActivity">
+
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -42,14 +43,14 @@
 
         <!-- WidgetDemoListActivity -->
         <activity
-            android:name=".ui.activity.WidgetDemoListActivity"
+            android:name=".demo.widget.WidgetDemoListActivity"
             android:label="Widget"
-            android:parentActivityName=".ui.activity.MainActivity">
-            <!-- Parent activity meta-data to support 4.0 and lower -->
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".ui.activity.MainActivity" />
-        </activity>
+            android:parentActivityName=".ui.activity.MainActivity" />
+
+        <!-- ToggleButtonTestActivity -->
+        <activity
+            android:name=".demo.widget.button.ToggleButtonTestActivity"
+            android:label="MyToggleButton" />
 
         <!-- ProgressBarDemoActivity -->
         <activity

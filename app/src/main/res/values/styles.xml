@@ -44,4 +44,11 @@
         <item name="android:maxHeight">4dp</item>
     </style>
 
+    <style name="MyToggleButton" parent="android:Widget.Button.Toggle">
+        <item name="toggleClickToggle">true</item>
+        <item name="android:textColor">@color/slt_toggle_text</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:background">@null</item>
+    </style>
+
 </resources>
