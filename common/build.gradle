@@ -35,6 +35,8 @@ dependencies {
     api 'com.google.android.material:material:1.2.1'
     def deps = rootProject.ext.deps
     api deps.kotlin.stdlib
+    api deps.kotlin.coroutines.core
+    api deps.kotlin.coroutines.android
     api deps.androidx.appcompat
     api deps.androidx.constraintlayout
     api deps.androidx.recyclerview

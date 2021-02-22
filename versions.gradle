@@ -6,6 +6,7 @@ versions.compile_sdk = 30
 versions.min_sdk = 21
 versions.target_sdk = 30
 versions.kotlin = "1.4.10"
+versions.kotlin_coroutines = "1.4.2"
 versions.navigation = "2.3.1"
 versions.lifecycle = "2.0.0"
 versions.room = "1.1.1"
@@ -27,6 +28,11 @@ kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
 kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:$versions.kotlin"
 kotlin.allopen = "org.jetbrains.kotlin:kotlin-allopen:$versions.kotlin"
 deps.kotlin = kotlin
+
+def coroutines = [:]
+coroutines.core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.kotlin_coroutines"
+coroutines.android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.kotlin_coroutines"
+deps.kotlin.coroutines = coroutines
 
 def androidx = [:]
 androidx.appcompat = 'androidx.appcompat:appcompat:1.2.0'
