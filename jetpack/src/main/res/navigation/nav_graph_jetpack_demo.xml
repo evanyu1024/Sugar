@@ -23,6 +23,10 @@
             app:popEnterAnim="@anim/fragment_open_enter"
             app:popExitAnim="@anim/fragment_close_exit" />
 
+        <action
+            android:id="@+id/action_jetpackMainFragment_to_viewModelTestFragment"
+            app:destination="@+id/viewModelTestFragment" />
+
     </fragment>
 
     <activity
@@ -50,5 +54,11 @@
             app:argType="string" />
 
     </fragment>
+
+    <fragment
+        android:id="@+id/viewModelTestFragment"
+        android:name="com.yblxt.sugar.jetpack.viewmodel.ViewModelTestFragment"
+        android:label="fragment_viewmodel_test"
+        tools:layout="@layout/fragment_viewmodel_test" />
 
 </navigation>
