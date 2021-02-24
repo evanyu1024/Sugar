@@ -11,6 +11,10 @@ import androidx.lifecycle.Observer
 import com.yblxt.sugar.jetpack.R
 import kotlinx.android.synthetic.main.fragment_viewmodel_test_sub1.*
 
+/**
+ * @author : evanyu
+ * @date 2021/02/23
+ */
 class ViewModelTestSubFragment1 : Fragment() {
 
     val viewModel: MyViewModel by activityViewModels()

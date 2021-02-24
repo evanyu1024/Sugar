@@ -9,6 +9,10 @@ import androidx.fragment.app.activityViewModels
 import com.yblxt.sugar.jetpack.R
 import kotlinx.android.synthetic.main.fragment_viewmodel_test.*
 
+/**
+ * @author : evanyu
+ * @date 2021/02/23
+ */
 class ViewModelTestFragment : Fragment() {
 
     val viewModel: MyViewModel by activityViewModels()

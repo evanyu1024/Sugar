@@ -6,11 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.yblxt.sugar.jetpack.R
 import kotlinx.android.synthetic.main.fragment_viewmodel_test_sub1.*
 
+/**
+ * @author : evanyu
+ * @date 2021/02/23
+ */
 class ViewModelTestSubFragment2 : Fragment() {
 
     val viewModel: MyViewModel by activityViewModels()

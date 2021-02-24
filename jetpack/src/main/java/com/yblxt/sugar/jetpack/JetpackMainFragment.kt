@@ -50,6 +50,11 @@ class JetpackMainFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+        // open LiveData test page
+        btn_open_livedata_test_fragment.setOnClickListener {
+            findNavController().navigate(R.id.action_jetpackMainFragment_to_liveDataTestFragment)
+        }
+
         // open ViewModel test page
         btn_open_viewmodel_test_fragment.setOnClickListener {
             findNavController().navigate(R.id.action_jetpackMainFragment_to_viewModelTestFragment)

@@ -24,6 +24,10 @@
             app:popExitAnim="@anim/fragment_close_exit" />
 
         <action
+            android:id="@+id/action_jetpackMainFragment_to_liveDataTestFragment"
+            app:destination="@+id/liveDataTestFragment" />
+
+        <action
             android:id="@+id/action_jetpackMainFragment_to_viewModelTestFragment"
             app:destination="@+id/viewModelTestFragment" />
 
@@ -54,6 +58,12 @@
             app:argType="string" />
 
     </fragment>
+
+    <fragment
+        android:id="@+id/liveDataTestFragment"
+        android:name="com.yblxt.sugar.jetpack.livedata.LiveDataTestFragment"
+        android:label="fragment_livedata_test"
+        tools:layout="@layout/fragment_livedata_test" />
 
     <fragment
         android:id="@+id/viewModelTestFragment"
