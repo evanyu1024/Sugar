@@ -57,7 +57,7 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompa
     protected abstract fun getLayoutResId(): Int
 
     protected fun initToolbar() {
-        (findViewById(R.id.toolbar) as Toolbar?)?.let { toolbar ->
+        (findViewById<Toolbar>(R.id.toolbar))?.let { toolbar ->
             setSupportActionBar(toolbar)
         }
     }

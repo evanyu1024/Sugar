@@ -1,2 +1,4 @@
-include ':app', ':jetpack'
-include ':common'
+include ':app'
+include ':module_user'
+include ':module_jetpack'
+include ':module_common'
