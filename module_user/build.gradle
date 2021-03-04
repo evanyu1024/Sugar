@@ -1,7 +1,8 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
-    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -31,6 +32,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -43,5 +47,12 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    def deps = rootProject.ext.deps
+
     implementation project(":module_common")
+    implementation deps.dagger.hilt
+    implementation deps.dagger.hilt_viewmodel
+    kapt deps.dagger.hilt_compiler
+
+    implementation "androidx.fragment:fragment-ktx:1.2.5"
 }

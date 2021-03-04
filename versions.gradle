@@ -5,11 +5,14 @@ def versions = [:]
 versions.compile_sdk = 30
 versions.min_sdk = 21
 versions.target_sdk = 30
-versions.kotlin = "1.4.10"
+versions.kotlin = "1.4.30"
 versions.kotlin_coroutines = "1.4.2"
 versions.androidx_navigation = "2.3.1"
 versions.androidx_lifecycle = "2.0.0"
 versions.androidx_room = "1.1.1"
+versions.androidx_hilt = "1.0.0-alpha03"
+versions.hilt = "2.33-beta"
+versions.dagger = "2.31.2"
 versions.okhttp = "3.4.1"
 versions.retrofit = "2.5.0"
 versions.rxjava2 = "2.2.5"
@@ -17,7 +20,6 @@ versions.rxandroid = "2.1.0"
 versions.rxlifecycle = "3.0.0"
 versions.butterknife = "10.1.0"
 versions.glide = "4.9.0"
-versions.dagger = "2.24"
 ext.versions = versions
 
 def deps = [:]
@@ -98,6 +100,9 @@ dagger.compiler = "com.google.dagger:dagger-compiler:$versions.dagger"
 dagger.android = "com.google.dagger:dagger-android:$versions.dagger"
 dagger.android_support = "com.google.dagger:dagger-android-support:$versions.dagger"
 dagger.android_compiler = "com.google.dagger:dagger-android-processor:$versions.dagger"
+dagger.hilt = "com.google.dagger:hilt-android:$versions.hilt"
+dagger.hilt_compiler = "com.google.dagger:hilt-android-compiler:$versions.hilt"
+dagger.hilt_viewmodel = "androidx.hilt:hilt-lifecycle-viewmodel:$versions.androidx_hilt"
 deps.dagger = dagger
 
 def arouter = [:]
@@ -113,6 +118,7 @@ glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
 deps.glide = glide
 
 // other
+deps.gson = 'com.google.code.gson:gson:2.8.6'
 deps.rxjava2 = "io.reactivex.rxjava2:rxjava:$versions.rxjava2"
 deps.rxandroid = "io.reactivex.rxjava2:rxandroid:$versions.rxandroid"
 deps.logger = "com.orhanobut:logger:2.2.0"

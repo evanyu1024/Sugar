@@ -1,44 +1,52 @@
 package com.yblxt.sugar.user.ui
 
 import android.content.Intent
+import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
-import com.yblxt.sugar.common.base.BaseSimpleActivity
-import com.yblxt.sugar.user.R
-import com.yblxt.sugar.user.repository.UserRepository
+import com.google.gson.Gson
+import com.yblxt.sugar.user.databinding.ActivityLoginBinding
 import com.yblxt.sugar.user.viewmodel.LoginViewModel
-import com.yblxt.sugar.user.viewmodel.factory.LoginViewModelFactory
-import kotlinx.android.synthetic.main.activity_login.*
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 /**
- * @author : evanyu
- * @date 2021/02/26
+ * @author evanyu
+ * @date 2021/2/26
  */
-class LoginActivity : BaseSimpleActivity() {
+@AndroidEntryPoint
+class LoginActivity : AppCompatActivity() {
 
-    private val vm: LoginViewModel by lazy {
-        ViewModelProviders.of(this, LoginViewModelFactory(UserRepository())).get(LoginViewModel::class.java)
-    }
+    private lateinit var binding: ActivityLoginBinding
+    private val viewModel: LoginViewModel by viewModels()
 
-    override fun getLayoutResId() = R.layout.activity_login
+    @Inject
+    lateinit var gson: Gson
 
-    override fun init() {
-        vm.loading.observe(this, Observer {
-            fl_loading.visibility = if (it) View.VISIBLE else View.GONE
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        Log.d("evanyu", "LoginActivity#gson.hashCode(): ${gson.hashCode()}")
+
+        viewModel.loading.observe(this, Observer {
+            binding.flLoading.visibility = if (it) View.VISIBLE else View.GONE
         })
-        vm.loginResult.observe(this, Observer {
+        viewModel.loginResult.observe(this, Observer {
             if (it) {
                 startActivity(Intent(this, LoginFinishActivity::class.java))
             } else {
                 Toast.makeText(this, "登录失败：帐号或密码错误", Toast.LENGTH_SHORT).show()
             }
         })
-        btn_login.setOnClickListener {
-            vm.login(et_user_name.text.toString(), et_user_pwd.text.toString())
+        binding.btnLogin.setOnClickListener {
+            viewModel.login(binding.etUserName.text.toString(), binding.etUserPwd.text.toString())
         }
-        fl_loading.setOnTouchListener { _, _ -> true }
     }
 
 }

@@ -1,18 +1,21 @@
 package com.yblxt.sugar.user.ui
 
-import com.yblxt.sugar.common.base.BaseSimpleActivity
-import com.yblxt.sugar.user.R
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.yblxt.sugar.user.databinding.ActivityLoginFinishBinding
 
 /**
- * @author : evanyu
+ * @author evanyu
  * @date 2021/02/26
  */
-class LoginFinishActivity : BaseSimpleActivity() {
+class LoginFinishActivity : AppCompatActivity() {
 
-    override fun getLayoutResId() = R.layout.activity_login_finish
+    private lateinit var binding: ActivityLoginFinishBinding
 
-    override fun init() {
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityLoginFinishBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 
 }

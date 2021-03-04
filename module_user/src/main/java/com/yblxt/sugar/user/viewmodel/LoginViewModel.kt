@@ -1,15 +1,18 @@
 package com.yblxt.sugar.user.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.yblxt.sugar.common.base.BaseViewModel
+import androidx.lifecycle.ViewModel
 import com.yblxt.sugar.user.repository.UserRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 import kotlin.concurrent.thread
 
 /**
- * @author : evanyu
+ * @author evanyu
  * @date 2021/02/26
  */
-class LoginViewModel(val userRepo: UserRepository) : BaseViewModel() {
+@HiltViewModel
+class LoginViewModel @Inject constructor(private val userRepo: UserRepository) : ViewModel() {
 
     val loading = MutableLiveData<Boolean>()
     val loginResult = MutableLiveData<Boolean>()

@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -44,15 +45,14 @@ dependencies {
     api deps.androidx.lifecycle.livedata
     api deps.androidx.lifecycle.viewmodel
     api deps.androidx.lifecycle.extensions
+    api deps.gson
     // rxjava
     api deps.rxjava2
     api deps.rxandroid
     // rxlifecycle
     api deps.rxlifecycle.android_lifecycle_kotlin
-    // dagger
-    api deps.dagger.runtime
-    api deps.dagger.android
-    api deps.dagger.android_support
-    kapt deps.dagger.compiler
-    kapt deps.dagger.android_compiler
+    // hilt
+    api deps.dagger.hilt
+    api deps.dagger.hilt_viewmodel
+    kapt deps.dagger.hilt_compiler
 }

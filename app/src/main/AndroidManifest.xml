@@ -36,11 +36,6 @@
                 android:value=".ui.activity.MainActivity" />
         </activity>
 
-        <!-- DataBindingDemoActivity -->
-        <activity
-            android:name=".demo.databinding.DataBindingDemoActivity"
-            android:label="DataBinding" />
-
         <!-- WidgetDemoListActivity -->
         <activity
             android:name=".demo.widget.WidgetDemoListActivity"

@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion rootProject.ext.versions.compile_sdk
@@ -69,7 +70,7 @@ dependencies {
     implementation deps.retrofit.runtime
     implementation deps.retrofit.converter_gson
     implementation deps.retrofit.adapter_rxjava2
-    // dagger
-    kapt deps.dagger.compiler
-    kapt deps.dagger.android_compiler
+    // hilt
+    implementation deps.dagger.hilt
+    kapt deps.dagger.hilt_compiler
 }
