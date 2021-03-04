@@ -54,5 +54,4 @@ dependencies {
     implementation deps.dagger.hilt_viewmodel
     kapt deps.dagger.hilt_compiler
 
-    implementation "androidx.fragment:fragment-ktx:1.2.5"
 }

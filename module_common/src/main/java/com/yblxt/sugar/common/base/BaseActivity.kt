@@ -7,7 +7,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.yblxt.sugar.common.R
 import com.yblxt.sugar.common.util.ToastUtils
 import java.lang.reflect.ParameterizedType
@@ -43,7 +43,7 @@ abstract class BaseActivity<DB : ViewDataBinding, VM : BaseViewModel> : AppCompa
     protected open fun initViewModel() {
         @Suppress("UNCHECKED_CAST")
         val vmClass: Class<VM> = (javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[1] as Class<VM>
-        viewModel = ViewModelProviders.of(this).get(vmClass)
+        viewModel = ViewModelProvider(this).get(vmClass)
     }
 
     private fun observeLiveData() {

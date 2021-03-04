@@ -39,18 +39,20 @@ dependencies {
     api deps.kotlin.coroutines.core
     api deps.kotlin.coroutines.android
     api deps.androidx.appcompat
+    api deps.androidx.fragment
     api deps.androidx.constraintlayout
     api deps.androidx.recyclerview
-    api deps.androidx.lifecycle.common
     api deps.androidx.lifecycle.livedata
     api deps.androidx.lifecycle.viewmodel
-    api deps.androidx.lifecycle.extensions
+    api deps.androidx.paging
     api deps.gson
     // rxjava
     api deps.rxjava2
-    api deps.rxandroid
+    api deps.rxjava3
+    api deps.rxandroid2
+    api deps.rxandroid3
     // rxlifecycle
-    api deps.rxlifecycle.android_lifecycle_kotlin
+    api deps.rxlifecycle3.android_lifecycle_kotlin
     // hilt
     api deps.dagger.hilt
     api deps.dagger.hilt_viewmodel

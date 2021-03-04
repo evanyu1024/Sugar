@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import com.yblxt.sugar.common.util.ToastUtils
 import java.lang.reflect.ParameterizedType
 
@@ -47,7 +47,7 @@ abstract class BaseFragment<DB : ViewDataBinding, VM : BaseViewModel> : Fragment
     @Suppress("UNCHECKED_CAST")
     protected open fun initViewModel() {
         val vmClass: Class<VM> = (javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[1] as Class<VM>
-        viewModel = ViewModelProviders.of(this).get(vmClass)
+        viewModel = ViewModelProvider(this).get(vmClass)
     }
 
     private fun observeLiveData() {
