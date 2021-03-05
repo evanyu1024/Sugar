@@ -6,12 +6,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+
+    compileSdkVersion rootProject.ext.versions.compile_sdk
+    buildToolsVersion rootProject.ext.versions.build_tools
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 30
+        minSdkVersion rootProject.ext.versions.min_sdk
+        targetSdkVersion rootProject.ext.versions.target_sdk
         versionCode 1
         versionName "1.0"
 
@@ -38,20 +39,14 @@ android {
 }
 
 dependencies {
-
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:${versions.kotlin}"
-    implementation 'androidx.core:core-ktx:1.2.0'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'com.google.android.material:material:1.1.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     def deps = rootProject.ext.deps
-
     implementation project(":module_common")
+    // hilt
     implementation deps.dagger.hilt
     implementation deps.dagger.hilt_viewmodel
     kapt deps.dagger.hilt_compiler
-
 }

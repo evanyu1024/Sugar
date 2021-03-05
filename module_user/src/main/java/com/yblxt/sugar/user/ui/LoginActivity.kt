@@ -2,7 +2,6 @@ package com.yblxt.sugar.user.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -12,6 +11,7 @@ import com.google.gson.Gson
 import com.yblxt.sugar.user.databinding.ActivityLoginBinding
 import com.yblxt.sugar.user.viewmodel.LoginViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 import javax.inject.Inject
 
 /**
@@ -32,7 +32,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Log.d("evanyu", "LoginActivity#gson.hashCode(): ${gson.hashCode()}")
+        Timber.tag("evanyu").d("LoginActivity#gson.hashCode(): ${gson.hashCode()}")
 
         viewModel.loading.observe(this, Observer {
             binding.flLoading.visibility = if (it) View.VISIBLE else View.GONE

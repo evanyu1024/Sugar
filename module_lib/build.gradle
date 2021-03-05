@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+
+    compileSdkVersion rootProject.ext.versions.compile_sdk
+    buildToolsVersion rootProject.ext.versions.build_tools
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.versions.min_sdk
+        targetSdkVersion rootProject.ext.versions.target_sdk
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    def deps = rootProject.ext.deps
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    // androidx
+    api deps.kotlin.stdlib
+    api deps.kotlin.coroutines.core
+    api deps.kotlin.coroutines.android
+    api deps.androidx.appcompat
+    api deps.androidx.fragment
+    api deps.androidx.constraintlayout
+    api deps.androidx.recyclerview
+    api deps.androidx.lifecycle.livedata
+    api deps.androidx.lifecycle.viewmodel
+    api deps.androidx.paging
+    // retrofit
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.converter_gson
+    implementation deps.retrofit.adapter_rxjava2
+    // glide
+    api deps.glide.runtime
+    kapt deps.glide.compiler
+    // rxjava
+    api deps.rxjava2
+    api deps.rxjava3
+    api deps.rxandroid2
+    api deps.rxandroid3
+    // rxlifecycle
+    api deps.rxlifecycle3.android_lifecycle_kotlin
+    // hilt
+    api deps.dagger.hilt
+    api deps.dagger.hilt_viewmodel
+    kapt deps.dagger.hilt_compiler
+    // others
+    api deps.android_material
+    api deps.gson
+    api deps.timber
+}

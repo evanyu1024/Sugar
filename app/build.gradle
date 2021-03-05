@@ -53,24 +53,16 @@ static def getCustomVersion(type) {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.13.1'
+    testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test:runner:1.3.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
-    api project(':module_user')
-    api project(':module_jetpack')
-    api project(':module_common')
-
     def deps = rootProject.ext.deps
-    // glide
-    implementation deps.glide.runtime
-    kapt deps.glide.compiler
-    // retrofit
-    implementation deps.retrofit.runtime
-    implementation deps.retrofit.converter_gson
-    implementation deps.retrofit.adapter_rxjava2
+    implementation project(':module_user')
+    implementation project(':module_jetpack')
+    implementation project(':module_common')
     // hilt
     implementation deps.dagger.hilt
+    implementation deps.dagger.hilt_viewmodel
     kapt deps.dagger.hilt_compiler
 }

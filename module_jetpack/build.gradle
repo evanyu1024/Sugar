@@ -31,11 +31,8 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.3.2'
-
-    api project(':module_common')
-
     def deps = rootProject.ext.deps
+    implementation project(':module_common')
     // navigation
     implementation deps.androidx.navigation.fragment
     implementation deps.androidx.navigation.ui
