@@ -1,12 +1,13 @@
 package com.yblxt.sugar.user.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
 import com.google.gson.Gson
 import com.yblxt.sugar.user.databinding.ActivityLoginBinding
 import com.yblxt.sugar.user.viewmodel.LoginViewModel
@@ -19,6 +20,7 @@ import javax.inject.Inject
  * @date 2021/2/26
  */
 @AndroidEntryPoint
+@Route(path = "/user/login")
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
@@ -39,7 +41,8 @@ class LoginActivity : AppCompatActivity() {
         })
         viewModel.loginResult.observe(this, Observer {
             if (it) {
-                startActivity(Intent(this, LoginFinishActivity::class.java))
+                ARouter.getInstance().build("/user/loginFinish").navigation()
+                finish()
             } else {
                 Toast.makeText(this, "登录失败：帐号或密码错误", Toast.LENGTH_SHORT).show()
             }

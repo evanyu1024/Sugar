@@ -23,7 +23,6 @@ class LoginViewModel @Inject constructor(private val userRepo: UserRepository) :
             loading.postValue(true)
             loginResult.postValue(userRepo.login(name, pwd))
             loading.postValue(false)
-
         }
     }
 

@@ -61,7 +61,7 @@ dependencies {
     implementation project(':module_user')
     implementation project(':module_jetpack')
     implementation project(':module_common')
-    // hilt
+    // Hilt
     implementation deps.dagger.hilt
     implementation deps.dagger.hilt_viewmodel
     kapt deps.dagger.hilt_compiler

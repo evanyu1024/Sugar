@@ -18,6 +18,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
     }
 
     buildTypes {
@@ -36,6 +42,9 @@ android {
     buildFeatures {
         viewBinding true
     }
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -45,7 +54,10 @@ dependencies {
 
     def deps = rootProject.ext.deps
     implementation project(":module_common")
-    // hilt
+    // ARouter
+    api deps.arouter.api
+    kapt deps.arouter.compiler
+    // Hilt
     implementation deps.dagger.hilt
     implementation deps.dagger.hilt_viewmodel
     kapt deps.dagger.hilt_compiler

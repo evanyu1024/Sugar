@@ -3,7 +3,7 @@ package com.yblxt.sugar.ui.activity
 import com.yblxt.sugar.demo.widget.WidgetDemoListActivity
 import com.yblxt.sugar.entry.DemoItem
 import com.yblxt.sugar.jetpack.JetpackMainActivity
-import com.yblxt.sugar.user.ui.LoginActivity
+import com.yblxt.sugar.user.ui.UserCenterActivity
 
 /**
  * @author evanyu
@@ -16,7 +16,7 @@ class MainActivity : BaseDemoListActivity() {
             DemoItem("SecondActivity", SecondActivity::class.java),
             DemoItem("Widget", WidgetDemoListActivity::class.java),
             DemoItem("Jetpack", JetpackMainActivity::class.java),
-            DemoItem("login demo", LoginActivity::class.java)
+            DemoItem("user center", UserCenterActivity::class.java)
         )
     }
 }

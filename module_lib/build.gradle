@@ -58,6 +58,8 @@ dependencies {
     api deps.dagger.hilt
     api deps.dagger.hilt_viewmodel
     kapt deps.dagger.hilt_compiler
+    // ARouter
+    api deps.arouter.api
     // others
     api deps.android_material
     api deps.gson
