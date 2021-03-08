@@ -39,6 +39,7 @@ dependencies {
     api deps.androidx.lifecycle.livedata
     api deps.androidx.lifecycle.viewmodel
     api deps.androidx.paging
+    api deps.androidx.startup
     // retrofit
     implementation deps.retrofit.runtime
     implementation deps.retrofit.converter_gson
