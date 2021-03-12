@@ -40,6 +40,13 @@
             android:text="用户中心"
             android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/btn_global_downgrade_strategy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全局降级策略"
+            android:textAllCaps="false" />
+
     </LinearLayout>
 
 </layout>

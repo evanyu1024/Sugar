@@ -42,6 +42,9 @@ class UserCenterFragment : Fragment() {
         binding.btnMembershipCenter.setOnClickListener {
             ARouter.getInstance().build(Router.Path.USER_MEMBERSHIP_CENTER).navigation()
         }
+        binding.btnGlobalDowngradeStrategy.setOnClickListener {
+            ARouter.getInstance().build("/user/test").navigation()
+        }
     }
 
 }

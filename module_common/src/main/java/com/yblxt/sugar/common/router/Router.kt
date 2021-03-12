@@ -15,6 +15,7 @@ object Router {
         const val USER_LOGIN = "/user/login"
         const val USER_LOGOUT = "/user/logout"
         const val USER_MEMBERSHIP_CENTER = "/user/membership"
+        const val PAGE_LOST = "/degrade/page_lost"
     }
 
 }

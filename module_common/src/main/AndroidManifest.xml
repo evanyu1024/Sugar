@@ -18,6 +18,8 @@
 
         </provider>
 
+        <activity android:name=".router.PageLostActivity" />
+
     </application>
 
 </manifest>
