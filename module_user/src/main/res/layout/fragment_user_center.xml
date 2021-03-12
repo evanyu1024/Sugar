@@ -33,6 +33,13 @@
             android:textAllCaps="false"
             android:visibility="@{viewModel.isLogin ? View.VISIBLE:View.GONE}" />
 
+        <Button
+            android:id="@+id/btn_membership_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户中心"
+            android:textAllCaps="false" />
+
     </LinearLayout>
 
 </layout>

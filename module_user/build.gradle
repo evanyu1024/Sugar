@@ -55,7 +55,6 @@ dependencies {
     def deps = rootProject.ext.deps
     implementation project(":module_common")
     // ARouter
-    api deps.arouter.api
     kapt deps.arouter.compiler
     // Hilt
     implementation deps.dagger.hilt

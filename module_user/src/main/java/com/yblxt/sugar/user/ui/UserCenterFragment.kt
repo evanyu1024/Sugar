@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.alibaba.android.arouter.launcher.ARouter
+import com.yblxt.sugar.common.router.Router
 import com.yblxt.sugar.user.R
 import com.yblxt.sugar.user.databinding.FragmentUserCenterBinding
 import com.yblxt.sugar.user.viewmodel.UserCenterViewModel
@@ -33,10 +34,13 @@ class UserCenterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnLogin.setOnClickListener {
-            ARouter.getInstance().build("/user/login").navigation()
+            ARouter.getInstance().build(Router.Path.USER_LOGIN).navigation()
         }
         binding.btnLogout.setOnClickListener {
             viewModel.logout()
+        }
+        binding.btnMembershipCenter.setOnClickListener {
+            ARouter.getInstance().build(Router.Path.USER_MEMBERSHIP_CENTER).navigation()
         }
     }
 

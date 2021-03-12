@@ -13,10 +13,12 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.versions.min_sdk
         targetSdkVersion rootProject.ext.versions.target_sdk
-    }
 
-    dataBinding {
-        enabled = true
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
+            }
+        }
     }
 
     compileOptions {
@@ -27,8 +29,22 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
 }
 
 dependencies {
     api project(':module_lib')
+
+    // ARouter
+    kapt deps.arouter.compiler
+    // Hilt
+    kapt deps.dagger.hilt_compiler
 }
