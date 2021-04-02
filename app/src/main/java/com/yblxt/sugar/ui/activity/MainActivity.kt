@@ -1,5 +1,6 @@
 package com.yblxt.sugar.ui.activity
 
+import com.yblxt.sugar.demo.service.ServiceDemoActivity
 import com.yblxt.sugar.demo.widget.WidgetDemoListActivity
 import com.yblxt.sugar.entry.DemoItem
 import com.yblxt.sugar.jetpack.JetpackMainActivity
@@ -16,7 +17,8 @@ class MainActivity : BaseDemoListActivity() {
             DemoItem("SecondActivity", SecondActivity::class.java),
             DemoItem("Widget", WidgetDemoListActivity::class.java),
             DemoItem("Jetpack", JetpackMainActivity::class.java),
-            DemoItem("user center", UserCenterActivity::class.java)
+            DemoItem("user center", UserCenterActivity::class.java),
+            DemoItem("Service", ServiceDemoActivity::class.java)
         )
     }
 }

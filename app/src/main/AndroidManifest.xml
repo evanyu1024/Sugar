@@ -5,6 +5,7 @@
     tools:ignore="GoogleAppIndexingWarning">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:name=".SugarApplication"
@@ -51,6 +52,10 @@
         <activity
             android:name=".demo.widget.progressbar.ProgressBarDemoActivity"
             android:label="MyProgressBar" />
+
+        <activity android:name=".demo.service.ServiceDemoActivity" />
+
+        <service android:name=".demo.service.MyForegroundService" />
 
     </application>
 
