@@ -37,21 +37,22 @@
                 android:value=".ui.activity.MainActivity" />
         </activity>
 
-        <!-- WidgetDemoListActivity -->
         <activity
             android:name=".demo.widget.WidgetDemoListActivity"
             android:label="Widget"
             android:parentActivityName=".ui.activity.MainActivity" />
 
-        <!-- ToggleButtonTestActivity -->
         <activity
             android:name=".demo.widget.button.ToggleButtonTestActivity"
             android:label="MyToggleButton" />
 
-        <!-- ProgressBarDemoActivity -->
         <activity
             android:name=".demo.widget.progressbar.ProgressBarDemoActivity"
             android:label="MyProgressBar" />
+
+        <activity
+            android:name=".demo.widget.scroll.ScrollTestActivity"
+            android:label="Scroll" />
 
         <activity android:name=".demo.service.ServiceDemoActivity" />
 

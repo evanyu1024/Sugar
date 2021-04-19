@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_scroll_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="scrollTo"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_scroll_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="scrollBy"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toRightOf="@id/btn_scroll_to"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_scroller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scroller"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toRightOf="@id/btn_scroll_by"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.yblxt.sugar.demo.widget.scroll.ScrollTestView
+        android:id="@+id/scroll_test_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="50dp"
+        android:background="@android:color/holo_blue_light"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/guide_line"
+        app:layout_constraintTop_toBottomOf="@id/btn_scroll_to" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
