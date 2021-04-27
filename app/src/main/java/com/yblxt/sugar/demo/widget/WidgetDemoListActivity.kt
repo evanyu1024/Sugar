@@ -19,6 +19,7 @@ class WidgetDemoListActivity : BaseDemoListActivity() {
 
     override fun getItemList(): List<DemoItem> {
         return listOf(
+            DemoItem("RecyclerView", RecyclerViewTestActivity::class.java),
             DemoItem("ToggleButton", ToggleButtonTestActivity::class.java),
             DemoItem("ProgressBar", ProgressBarDemoActivity::class.java),
             DemoItem("scroll test", ScrollTestActivity::class.java)

@@ -54,6 +54,8 @@
             android:name=".demo.widget.scroll.ScrollTestActivity"
             android:label="Scroll" />
 
+        <activity android:name=".demo.widget.RecyclerViewTestActivity" />
+
         <activity android:name=".demo.service.ServiceDemoActivity" />
 
         <service android:name=".demo.service.MyForegroundService" />
