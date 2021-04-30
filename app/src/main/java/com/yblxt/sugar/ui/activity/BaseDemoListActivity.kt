@@ -3,28 +3,23 @@ package com.yblxt.sugar.ui.activity
 import android.content.Intent
 import android.view.View
 import android.widget.TextView
-import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yblxt.sugar.common.base.BaseRecyclerViewActivity
 import com.yblxt.sugar.common.base.BaseRecyclerViewAdapter
-import com.yblxt.sugar.common.base.BaseViewModel
 import com.yblxt.sugar.entry.DemoItem
 
 /**
  * @author evanyu
  * @date 2019-07-18
  */
-abstract class BaseDemoListActivity :
-    BaseRecyclerViewActivity<ViewDataBinding, BaseViewModel, DemoItem>() {
+abstract class BaseDemoListActivity : BaseRecyclerViewActivity<DemoItem>() {
 
     override fun initRecyclerView(recyclerView: RecyclerView) {
         recyclerView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
     }
-
-    override fun isMvvmEnabled() = false
 
     protected abstract fun getItemList(): List<DemoItem>
 

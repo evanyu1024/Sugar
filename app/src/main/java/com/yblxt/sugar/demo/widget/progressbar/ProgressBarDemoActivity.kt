@@ -2,14 +2,14 @@ package com.yblxt.sugar.demo.widget.progressbar
 
 import android.view.View
 import com.yblxt.sugar.R
-import com.yblxt.sugar.common.base.BaseSimpleActivity
+import com.yblxt.sugar.common.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_progressbar.*
 
 /**
  * @author evanyu
  * @date 2019-10-15
  */
-class ProgressBarDemoActivity : BaseSimpleActivity() {
+class ProgressBarDemoActivity : BaseActivity() {
     override fun getLayoutResId() = R.layout.activity_progressbar
 
     override fun init() {

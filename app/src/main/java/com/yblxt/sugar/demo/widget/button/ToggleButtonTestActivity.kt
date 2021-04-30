@@ -1,14 +1,14 @@
 package com.yblxt.sugar.demo.widget.button
 
 import com.yblxt.sugar.R
-import com.yblxt.sugar.common.base.BaseSimpleActivity
+import com.yblxt.sugar.common.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_toggle_button_test.*
 
 /**
  * @author evanyu
  * @date 2020-11-17
  */
-class ToggleButtonTestActivity : BaseSimpleActivity() {
+class ToggleButtonTestActivity : BaseActivity() {
 
     override fun getLayoutResId() = R.layout.activity_toggle_button_test
 

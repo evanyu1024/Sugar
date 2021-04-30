@@ -1,7 +1,6 @@
 package com.yblxt.sugar.common.base
 
 import android.view.View
-import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.yblxt.sugar.common.R
 import kotlinx.android.synthetic.main.layout_base_recyclerview.*
@@ -10,7 +9,7 @@ import kotlinx.android.synthetic.main.layout_base_recyclerview.*
  * @author evanyu
  * @date 2019-07-18
  */
-abstract class BaseRecyclerViewActivity<DB : ViewDataBinding, VM : BaseViewModel, E> : BaseActivity<DB, VM>() {
+abstract class BaseRecyclerViewActivity<E> : BaseActivity() {
 
     protected var adapter: BaseRecyclerViewAdapter<E>? = null
         set(value) {

@@ -1,14 +1,14 @@
 package com.yblxt.sugar.jetpack.navigation
 
 import android.util.Log
-import com.yblxt.sugar.common.base.BaseSimpleActivity
+import com.yblxt.sugar.common.base.BaseActivity
 import com.yblxt.sugar.jetpack.R
 
 /**
  * @author : evanyu
  * @date 2020/11/02
  */
-class NavTestActivity : BaseSimpleActivity() {
+class NavTestActivity : BaseActivity() {
 
     override fun getLayoutResId() = R.layout.activity_nav_test
 
