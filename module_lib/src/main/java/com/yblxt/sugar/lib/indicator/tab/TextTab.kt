@@ -26,8 +26,12 @@ class TextTab(context: Context) : Tab() {
 
     override fun getView() = textView
 
-    override fun onSelectChanged(isSelected: Boolean) {
-        textView.setTextColor(if (isSelected) COLOR_SELECTED else COLOR_NORMAL)
+    override fun onSelected() {
+        textView.setTextColor(COLOR_SELECTED)
+    }
+
+    override fun onUnselected() {
+        textView.setTextColor(COLOR_NORMAL)
     }
 
     fun setText(text: String) {

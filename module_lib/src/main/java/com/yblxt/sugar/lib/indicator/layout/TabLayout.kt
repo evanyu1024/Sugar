@@ -5,6 +5,7 @@ import android.util.AttributeSet
 import android.util.SparseArray
 import android.view.ViewGroup
 import androidx.core.util.forEach
+import com.yblxt.sugar.lib.indicator.Indicator
 import com.yblxt.sugar.lib.indicator.TabAdapter
 import com.yblxt.sugar.lib.indicator.tab.Tab
 
@@ -13,14 +14,14 @@ import com.yblxt.sugar.lib.indicator.tab.Tab
  * @date 2021-05-04
  */
 class TabLayout @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
-    ViewGroup(context, attrs, defStyleAttr) {
+    ViewGroup(context, attrs, defStyleAttr), Indicator {
 
     private var adapter: TabAdapter? = null
     private val tabs = SparseArray<Tab>()
     private var curIndex: Int = 0
-    private var onTabSelectedListener: OnTabSelectedListener? = null
+    private val onTabSelectedListenerList by lazy { ArrayList<Indicator.OnTabSelectedListener>() }
 
-    fun setAdapter(adapter: TabAdapter) {
+    override fun setAdapter(adapter: TabAdapter) {
         this.adapter = adapter
         removeAllViews()
         tabs.clear()
@@ -35,9 +36,13 @@ class TabLayout @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         onTabSelected(curIndex)
     }
 
+    override fun setSelected(index: Int) {
+        onTabSelected(index)
+    }
+
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         if (childCount > 0) {
-            val tabWidth = resolveSize(Int.MAX_VALUE, widthMeasureSpec) / 3
+            val tabWidth = resolveSize(Int.MAX_VALUE, widthMeasureSpec) / (adapter?.getCount() ?: 1)
             val tabHeight = resolveSize(Int.MAX_VALUE, heightMeasureSpec)
             val tabWidthMeasureSpec = MeasureSpec.makeMeasureSpec(tabWidth, MeasureSpec.EXACTLY)
             val tabHeightMeasureSpec = MeasureSpec.makeMeasureSpec(tabHeight, MeasureSpec.EXACTLY)
@@ -66,28 +71,22 @@ class TabLayout @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         }
 
         tabs.forEach { index, tab ->
-            tab.onSelectChanged(index == this.curIndex)
+            when (index) {
+                this.curIndex -> tab.onSelected()
+                oldIndex -> tab.onUnselected()
+            }
         }
 
         if (oldIndex != this.curIndex) {
-            onTabSelectedListener?.onSelectChanged(this.curIndex, oldIndex)
-        }
-    }
-
-    interface OnTabSelectedListener {
-        fun onSelectChanged(curIndex: Int, preIndex: Int)
-    }
-
-    fun setOnTabSelectedListener(listener: OnTabSelectedListener) {
-        onTabSelectedListener = listener
-    }
-
-    fun setOnTabSelectedListener(closure: (Int, Int) -> Unit) {
-        onTabSelectedListener = object : OnTabSelectedListener {
-            override fun onSelectChanged(curIndex: Int, preIndex: Int) {
-                closure.invoke(curIndex, preIndex)
+            onTabSelectedListenerList.forEach {
+                it.onTabSelected(this.curIndex)
+                it.onTabUnselected(oldIndex)
             }
         }
+    }
+
+    override fun addOnTabSelectedListener(listener: Indicator.OnTabSelectedListener) {
+        onTabSelectedListenerList.add(listener)
     }
 
 }

@@ -14,19 +14,15 @@ import com.yblxt.sugar.entry.DemoItem
  * @author evanyu
  * @date 2021-05-06
  */
-abstract class BaseDemoListFragment: BaseViewBindingFragment<LayoutBaseRecyclerviewBinding>() {
-
-    private var adapter: BaseRecyclerViewAdapter<DemoItem>? = null
-        set(value) {
-            binding.recyclerviewBase.adapter = value
-            field = value
-        }
+abstract class BaseDemoListFragment : BaseViewBindingFragment<LayoutBaseRecyclerviewBinding>() {
 
     private val recyclerView by lazy { binding.recyclerviewBase }
+    private var adapter: BaseRecyclerViewAdapter<DemoItem>? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
-        recyclerView.adapter = createAdapter().apply { setOnItemClickListener(this@BaseDemoListFragment::onItemClick) }
+        adapter = createAdapter().apply { setOnItemClickListener(this@BaseDemoListFragment::onItemClick) }
+        recyclerView.adapter = adapter
     }
 
     private fun createAdapter() = InnerAdapter(getItemList())

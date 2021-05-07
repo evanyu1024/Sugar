@@ -9,19 +9,11 @@ import android.view.View
 abstract class Tab {
 
     var index: Int = -1
-    private var state: Int = STATE_NORMAL
-
-    companion object {
-        const val STATE_NORMAL = 0
-        const val STATE_SELECTED = 1
-    }
 
     abstract fun getView(): View
 
-    abstract fun onSelectChanged(isSelected: Boolean)
+    abstract fun onSelected()
 
-    fun isNormal() = state == STATE_NORMAL
-
-    fun isSelected() = (state and STATE_SELECTED) == STATE_SELECTED
+    abstract fun onUnselected()
 
 }
