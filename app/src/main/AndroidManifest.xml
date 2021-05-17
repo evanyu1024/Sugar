@@ -16,7 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- MainActivity -->
         <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,8 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- SecondActivity -->
         <activity
             android:name=".ui.activity.SecondActivity"
             android:label="SecondActivity"
@@ -36,25 +33,28 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.activity.MainActivity" />
         </activity>
-
         <activity
             android:name=".demo.widget.WidgetDemoListActivity"
             android:label="Widget"
             android:parentActivityName=".ui.activity.MainActivity" />
-
         <activity
             android:name=".demo.widget.button.ToggleButtonTestActivity"
             android:label="MyToggleButton" />
-
         <activity
             android:name=".demo.widget.progressbar.ProgressBarDemoActivity"
             android:label="MyProgressBar" />
-
         <activity
             android:name=".demo.widget.scroll.ScrollTestActivity"
             android:label="Scroll" />
-
-        <activity android:name=".demo.widget.RecyclerViewTestActivity" />
+        <activity
+            android:name=".demo.widget.recyclerview.RecyclerViewTestActivity"
+            android:label="RecyclerView" />
+        <activity
+            android:name=".demo.widget.recyclerview.RecyclerViewBasicUsageActivity"
+            android:label="RecyclerView" />
+        <activity
+            android:name=".demo.widget.recyclerview.SpanSizeLookupTestActivity"
+            android:label="RecyclerView" />
 
         <activity android:name=".demo.service.ServiceDemoActivity" />
 

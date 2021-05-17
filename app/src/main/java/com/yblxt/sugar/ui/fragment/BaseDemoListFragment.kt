@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yblxt.sugar.common.base.BaseRecyclerViewAdapter
 import com.yblxt.sugar.common.base.BaseViewBindingFragment
@@ -21,6 +22,7 @@ abstract class BaseDemoListFragment : BaseViewBindingFragment<LayoutBaseRecycler
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        recyclerView.addItemDecoration(DividerItemDecoration(activity, LinearLayoutManager.VERTICAL))
         adapter = createAdapter().apply { setOnItemClickListener(this@BaseDemoListFragment::onItemClick) }
         recyclerView.adapter = adapter
     }

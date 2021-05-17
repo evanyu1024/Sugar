@@ -2,6 +2,7 @@ package com.yblxt.sugar.demo.widget
 
 import com.yblxt.sugar.demo.widget.button.ToggleButtonTestActivity
 import com.yblxt.sugar.demo.widget.progressbar.ProgressBarDemoActivity
+import com.yblxt.sugar.demo.widget.recyclerview.RecyclerViewTestActivity
 import com.yblxt.sugar.demo.widget.scroll.ScrollTestActivity
 import com.yblxt.sugar.entry.DemoItem
 import com.yblxt.sugar.ui.activity.BaseDemoListActivity

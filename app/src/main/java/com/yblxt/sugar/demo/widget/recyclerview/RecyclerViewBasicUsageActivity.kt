@@ -1,30 +1,25 @@
-package com.yblxt.sugar.demo.widget
+package com.yblxt.sugar.demo.widget.recyclerview
 
 import android.content.Context
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yblxt.sugar.R
-import com.yblxt.sugar.databinding.ActivityRecyclerviewTestBinding
+import com.yblxt.sugar.common.base.BaseViewBindingActivity
+import com.yblxt.sugar.databinding.ActivityRecyclerviewBasicUsageBinding
 import timber.log.Timber
 
 /**
  * @author evanyu
  * @date 2021-04-27
  */
-class RecyclerViewTestActivity : AppCompatActivity() {
-
-    private var _binding: ActivityRecyclerviewTestBinding? = null
-    private val binding: ActivityRecyclerviewTestBinding
-        get() = _binding!!
+class RecyclerViewBasicUsageActivity : BaseViewBindingActivity<ActivityRecyclerviewBasicUsageBinding>() {
 
     private val cboxPayload by lazy { binding.cboxPayload }
     private val recyclerview by lazy { binding.recyclerview }
@@ -37,11 +32,7 @@ class RecyclerViewTestActivity : AppCompatActivity() {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        _binding = ActivityRecyclerviewTestBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
+    override fun init() {
         initRecyclerView()
 
         binding.btnNotifyDataSetChanged.setOnClickListener {
@@ -57,7 +48,7 @@ class RecyclerViewTestActivity : AppCompatActivity() {
         recyclerview.adapter = adapter
         adapter.onItemClickListener = object : MyAdapter.OnItemClickListener {
             override fun onItemClick(itemView: View, position: Int) {
-                Toast.makeText(this@RecyclerViewTestActivity, "item:$position", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@RecyclerViewBasicUsageActivity, "item:$position", Toast.LENGTH_SHORT).show()
                 // 同时执行多个操作
                 // add
                 data.add(position, "added text")
