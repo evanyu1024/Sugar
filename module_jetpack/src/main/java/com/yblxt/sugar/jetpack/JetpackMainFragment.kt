@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.yblxt.sugar.jetpack.livedata.SimpleLiveEventBus
 import com.yblxt.sugar.jetpack.navigation.NavTestActivity
 import kotlinx.android.synthetic.main.fragment_jetpack_main.*
 
@@ -22,6 +23,11 @@ class JetpackMainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // 发送普通事件
+        SimpleLiveEventBus.with<String>("EventBusTest").postSticky("sticky event")
+        // 发送粘性事件
+        SimpleLiveEventBus.with<String>("EventBusTest").post("normal event")
 
         // startActivity
         btn_normal_start_activity.setOnClickListener { startActivity(Intent(context, NavTestActivity::class.java)) }

@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.Transformations
 import com.yblxt.sugar.jetpack.R
 import kotlinx.android.synthetic.main.fragment_livedata_test.*
+import timber.log.Timber
 
 /**
  * @author : evanyu
@@ -37,6 +38,14 @@ class LiveDataTestFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // 事件总线测试
+        SimpleLiveEventBus.with<String>("EventBusTest").observe(this, { data: String ->
+            Timber.tag("evanyu").d("observe -> $data")
+        })
+        SimpleLiveEventBus.with<String>("EventBusTest").observeSticky(this, { data: String ->
+            Timber.tag("evanyu").d("observeSticky -> $data")
+        })
 
         // 转换被观察的数据类型
         Transformations.map(liveData1) {
