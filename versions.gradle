@@ -9,12 +9,12 @@ versions.target_sdk = 30
 versions.kotlin = "1.4.31"
 versions.kotlin_coroutines = "1.4.2"
 versions.androidx_navigation = "2.3.3"
-versions.androidx_lifecycle = "2.3.0"
+versions.androidx_lifecycle = "2.3.1"
 versions.androidx_room = "2.2.6"
 versions.androidx_hilt = "1.0.0-alpha03"
 versions.hilt = "2.33-beta"
 versions.dagger = "2.33"
-versions.okhttp = "4.9.0"
+versions.okhttp = "4.9.1"
 versions.retrofit = "2.9.0"
 versions.rxjava2 = "2.2.21"
 versions.rxjava3 = "3.0.10"
@@ -80,9 +80,9 @@ lifecycle.compiler = "androidx.lifecycle:lifecycle-compiler:$versions.androidx_l
 deps.androidx.lifecycle = lifecycle
 
 def okhttp = [:]
-okhttp.runtime = "com.squareup.okhttp3:okhttp:$versions.okhttp3"
-okhttp.urlconnection = "com.squareup.okhttp3:okhttp-urlconnection:$versions.okhttp3"
-okhttp.logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp3"
+okhttp.runtime = "com.squareup.okhttp3:okhttp:$versions.okhttp"
+okhttp.urlconnection = "com.squareup.okhttp3:okhttp-urlconnection:$versions.okhttp"
+okhttp.logging_interceptor = "com.squareup.okhttp3:logging-interceptor:$versions.okhttp"
 okhttp.persistent_cookie_jar = 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
 deps.okhttp = okhttp
 
@@ -162,5 +162,6 @@ deps.picker_view = 'com.contrarywind:Android-PickerView:4.1.7'
 deps.dislrucache = 'com.jakewharton:disklrucache:2.0.2'
 deps.liveeventbus = 'com.jeremyliao:live-event-bus:1.7.3'
 deps.timber = 'com.jakewharton.timber:timber:4.7.1'
+deps.leakcanary = 'com.squareup.leakcanary:leakcanary-android:2.7'
 
 ext.deps = deps

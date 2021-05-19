@@ -1,5 +1,6 @@
 package com.yblxt.sugar.ui.fragment
 
+import com.yblxt.sugar.demo.image.ImageLoaderTestActivity
 import com.yblxt.sugar.demo.service.ServiceDemoActivity
 import com.yblxt.sugar.demo.widget.WidgetDemoListActivity
 import com.yblxt.sugar.entry.DemoItem
@@ -19,7 +20,8 @@ class MainTabOneFragment : BaseDemoListFragment() {
             DemoItem("Widget", WidgetDemoListActivity::class.java),
             DemoItem("Jetpack", JetpackMainActivity::class.java),
             DemoItem("user center", UserCenterActivity::class.java),
-            DemoItem("Service", ServiceDemoActivity::class.java)
+            DemoItem("Service", ServiceDemoActivity::class.java),
+            DemoItem("ImageLoader", ImageLoaderTestActivity::class.java)
         )
     }
 

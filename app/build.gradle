@@ -68,4 +68,10 @@ dependencies {
     implementation deps.dagger.hilt
     implementation deps.dagger.hilt_viewmodel
     kapt deps.dagger.hilt_compiler
+    // glide
+    api deps.glide.runtime
+    api deps.glide.okhttp3
+    kapt deps.glide.compiler
+
+    debugImplementation deps.leakcanary
 }

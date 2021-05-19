@@ -41,9 +41,11 @@ dependencies {
     api deps.androidx.paging
     api deps.androidx.startup
     // retrofit
-    implementation deps.retrofit.runtime
-    implementation deps.retrofit.converter_gson
-    implementation deps.retrofit.adapter_rxjava2
+    api deps.okhttp.runtime
+    api deps.okhttp.logging_interceptor
+    api deps.retrofit.runtime
+    api deps.retrofit.converter_gson
+    api deps.retrofit.adapter_rxjava2
     // glide
     api deps.glide.runtime
     kapt deps.glide.compiler
@@ -64,4 +66,5 @@ dependencies {
     api deps.android_material
     api deps.gson
     api deps.timber
+    api deps.utilsx
 }
