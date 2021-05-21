@@ -29,6 +29,24 @@
         app:layout_constraintBottom_toTopOf="@id/et_content"
         app:layout_constraintRight_toRightOf="parent" />
 
+    <Button
+        android:id="@+id/btn_set_file"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="setFile"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_content" />
+
+    <Button
+        android:id="@+id/btn_get_file"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="getFile"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toRightOf="@id/btn_set_file"
+        app:layout_constraintTop_toTopOf="@id/btn_set_file" />
+
     <fragment
         android:id="@+id/viewmodel_test_sub_fragment1"
         android:name="com.yblxt.sugar.jetpack.viewmodel.ViewModelTestSubFragment1"
@@ -36,7 +54,7 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         app:layout_constraintBottom_toTopOf="@id/viewmodel_test_sub_fragment2"
-        app:layout_constraintTop_toBottomOf="@id/et_content" />
+        app:layout_constraintTop_toBottomOf="@id/btn_set_file" />
 
     <fragment
         android:id="@+id/viewmodel_test_sub_fragment2"
