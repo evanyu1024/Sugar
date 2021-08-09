@@ -5,14 +5,15 @@ def versions = [:]
 versions.compile_sdk = 30
 versions.build_tools = "30.0.2"
 versions.min_sdk = 21
-versions.target_sdk = 30
-versions.kotlin = "1.4.31"
+versions.target_sdk = 21
+versions.kotlin = "1.5.21"
 versions.kotlin_coroutines = "1.4.2"
 versions.androidx_navigation = "2.3.3"
 versions.androidx_lifecycle = "2.3.1"
+versions.androidx_datastore = "1.0.0-beta01"
 versions.androidx_room = "2.2.6"
 versions.androidx_hilt = "1.0.0-alpha03"
-versions.hilt = "2.33-beta"
+versions.hilt = "2.35"
 versions.dagger = "2.33"
 versions.okhttp = "4.9.1"
 versions.retrofit = "2.9.0"
@@ -61,6 +62,19 @@ navigation.fragment = "androidx.navigation:navigation-fragment-ktx:$versions.and
 navigation.ui = "androidx.navigation:navigation-ui-ktx:$versions.androidx_navigation"
 navigation.feature = "androidx.navigation:navigation-dynamic-features-fragment:$versions.androidx_navigation"
 deps.androidx.navigation = navigation
+
+def datastore = [:]
+datastore.typed = [
+        runtime: "androidx.datastore:datastore:$versions.androidx_datastore",
+        rxjava2: "androidx.datastore:datastore-rxjava2:$versions.androidx_datastore",
+        rxjava3: "androidx.datastore:datastore-rxjava3:$versions.androidx_datastore"
+]
+datastore.preferences = [
+        runtime: "androidx.datastore:datastore-preferences:$versions.androidx_datastore",
+        rxjava2: "androidx.datastore:datastore-preferences-rxjava2:$versions.androidx_datastore",
+        rxjava3: "androidx.datastore:datastore-preferences-rxjava3:$versions.androidx_datastore"
+]
+deps.androidx.datastore = datastore
 
 def room = [:]
 room.runtime = "androidx.room:room-runtime:$versions.androidx_room"
@@ -163,5 +177,6 @@ deps.dislrucache = 'com.jakewharton:disklrucache:2.0.2'
 deps.liveeventbus = 'com.jeremyliao:live-event-bus:1.7.3'
 deps.timber = 'com.jakewharton.timber:timber:4.7.1'
 deps.leakcanary = 'com.squareup.leakcanary:leakcanary-android:2.7'
+deps.mmkv = 'com.tencent:mmkv-static:1.2.10'
 
 ext.deps = deps

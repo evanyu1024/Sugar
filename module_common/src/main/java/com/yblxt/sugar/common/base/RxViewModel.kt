@@ -28,7 +28,7 @@ abstract class RxViewModel : ViewModel(), IViewModel, LifecycleProvider<Lifecycl
     }
 
     override fun <T : Any?> bindToLifecycle(): LifecycleTransformer<T> {
-        return RxLifecycleAndroidLifecycle.bindLifecycle<T>(lifecycleSubject)
+        return RxLifecycleAndroidLifecycle.bindLifecycle(lifecycleSubject)
     }
 
     override fun onLifecycleEvent(owner: LifecycleOwner, event: Lifecycle.Event) {

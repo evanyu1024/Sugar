@@ -22,7 +22,7 @@ abstract class BaseViewBindingFragment<VB : ViewBinding> : Fragment() {
 
     @Suppress("UNCHECKED_CAST")
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val vbClass = findViewBindingClass(javaClass.genericSuperclass)
+        val vbClass = findViewBindingClass(javaClass.genericSuperclass!!)
         val inflate = vbClass.getMethod("inflate", LayoutInflater::class.java, ViewGroup::class.java, Boolean::class.java)
         _binding = inflate.invoke(null, inflater, container, false) as VB
         return binding.root
@@ -39,7 +39,7 @@ abstract class BaseViewBindingFragment<VB : ViewBinding> : Fragment() {
         return if (type is ParameterizedType && type.actualTypeArguments.isNotEmpty()) {
             type.actualTypeArguments[0] as Class<VB>
         } else {
-            findViewBindingClass((type as Class<*>).genericSuperclass)
+            findViewBindingClass((type as Class<*>).genericSuperclass!!)
         }
     }
 

@@ -26,7 +26,6 @@ android {
 }
 
 dependencies {
-    def deps = rootProject.ext.deps
     api fileTree(dir: 'libs', include: ['*.jar'])
     // androidx
     api deps.kotlin.stdlib
@@ -67,4 +66,5 @@ dependencies {
     api deps.gson
     api deps.timber
     api deps.utilsx
+    api deps.mmkv
 }

@@ -60,6 +60,9 @@
         <activity
             android:name=".demo.image.ImageLoaderTestActivity"
             android:label="ImageLoader" />
+        <activity
+            android:name=".demo.storage.StorageTestActivity"
+            android:label="ImageLoader" />
 
         <activity android:name=".demo.service.ServiceDemoActivity" />
 

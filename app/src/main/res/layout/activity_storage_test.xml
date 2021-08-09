@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_testSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="test save"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_test_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="test get"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_test_get_liva_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="test get livedata and observe"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_unregister_observe_live_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="unregister observe livedata"
+        android:textAllCaps="false" />
+
+</LinearLayout>
