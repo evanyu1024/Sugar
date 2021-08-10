@@ -1,7 +1,8 @@
 package com.yblxt.sugar.user.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import com.yblxt.sugar.common.base.BaseViewModel
+import com.yblxt.sugar.user.bean.UserInfo
 import com.yblxt.sugar.user.repository.UserRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -12,10 +13,10 @@ import kotlin.concurrent.thread
  * @date 2021/02/26
  */
 @HiltViewModel
-class LoginViewModel @Inject constructor(private val userRepo: UserRepository) : ViewModel() {
+class LoginViewModel @Inject constructor(private val userRepo: UserRepository) : BaseViewModel() {
 
-    val loading = MutableLiveData<Boolean>()
-    val loginResult = MutableLiveData<Boolean>()
+    val loading = MutableLiveData(false)
+    val loginResult = MutableLiveData<UserInfo>()
 
     fun login(name: String, pwd: String) {
         // mock login request

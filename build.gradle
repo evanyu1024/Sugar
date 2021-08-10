@@ -1,4 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply plugin: 'com.alibaba.arouter'
 
 buildscript {
     apply from: 'versions.gradle'
@@ -12,6 +13,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$versions.hilt"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$versions.androidx_navigation"
+        classpath deps.arouter.register
     }
 }
 

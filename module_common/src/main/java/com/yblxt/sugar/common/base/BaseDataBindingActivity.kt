@@ -2,7 +2,6 @@ package com.yblxt.sugar.common.base
 
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.yblxt.sugar.common.util.ToastUtils
 import java.lang.reflect.ParameterizedType
@@ -19,6 +18,7 @@ abstract class BaseDataBindingActivity<DB : ViewDataBinding, VM : BaseViewModel>
     override fun initView() {
         initDataBinding()
         initViewModel()
+        installVariables()
         observeLiveData()
         lifecycle.addObserver(viewModel)
     }
@@ -34,9 +34,11 @@ abstract class BaseDataBindingActivity<DB : ViewDataBinding, VM : BaseViewModel>
         viewModel = ViewModelProvider(this).get(vmClass)
     }
 
+    abstract fun installVariables()
+
     private fun observeLiveData() {
         // observe ToastLiveData
-        viewModel.toast.observe(this, Observer { ToastUtils.showToast(this, it) })
+        viewModel.toast.observe(this, { ToastUtils.showToast(this, it) })
     }
 
 }
